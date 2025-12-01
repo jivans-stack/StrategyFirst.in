@@ -5,227 +5,374 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StrategyFirst.in – Digital Growth Agency</title>
 
-  <!-- Google Fonts – Outfit -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Google Fonts – Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ===================== GLOBAL ===================== */
+    :root{
+      --accent: #00a6ff;
+      --text: #222222;
+      --muted: #555555;
+      --bg: #ffffff;
+    }
+
+    *{box-sizing:border-box}
     body {
       margin: 0;
-      font-family: "Outfit", sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: 300;
-      background: #ffffff;
-      color: #222222;
-      letter-spacing: 0.3px;
+      background: var(--bg);
+      color: var(--text);
+      letter-spacing: 0.2px;
       scroll-behavior: smooth;
     }
+
     h1, h2, h3, h4 {
       margin: 0;
       color: #111;
-      font-weight: 300;
-      letter-spacing: 0.6px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      line-height: 1.15;
     }
-    p { color: #222; }
-    a { text-decoration: none; color: #111; transition: 0.3s; }
-    a:hover { color: #00a6ff; }
+
+    p { color: var(--text); margin: 0 0 12px 0; }
+    a { text-decoration: none; color: inherit; transition: 0.25s; }
+    a:hover { color: var(--accent); }
+
 
     /* ===================== NAVBAR ===================== */
     nav {
-      width: 90%;
+      width: 100%;
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: background 0.3s, padding 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: 0.3s;
     }
     nav.scrolled {
-      background: rgba(255,255,255,0.98);
       padding: 12px 6%;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
-    .logo { font-size: 36px; font-weight: 600; }
-    .nav-links { display: flex; gap: 25px; }
-    .nav-links a {
-      position: relative;
-      padding: 5px 0;
-      transition: color 0.3s;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0;
-      height: 2px;
-      background: #00a6ff;
-      transition: width 0.3s;
-    }
-    .nav-links a:hover::after { width: 100%; }
+
+    .logo { font-size: 30px; font-weight: 700; display:flex; gap:6px; }
+    .logo span.accent { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 22px; font-weight:500; }
+
 
     /* ===================== HERO ===================== */
     #hero {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      padding: 0 6%;
-      height: 100vh;
-      min-height: 600px;
+      display: flex; align-items: center; gap: 40px;
+      padding: 0 6%; height: 100vh; min-height: 640px;
       margin-top: 100px;
     }
-    .hero-image-section {
-      flex: 1;
-      border-radius: 14px;
-      overflow: hidden;
-      min-height: 500px;
-      box-shadow: 0 0 20px #00a6ff;
-      border: 2px solid #00a6ff;
-      opacity: 0;
-      transform: translateY(30px);
+
+    .hero-content {
+      flex: 1; max-width: 680px;
+      opacity: 0; transform: translateY(20px);
       animation: fadeInUp 1s forwards;
       animation-delay: 0.2s;
     }
-    .hero-image-section img { width: 100%; height: 100%; object-fit: cover; animation: floatHero 3s ease-in-out infinite alternate; }
-    .hero-form {
-      flex: 1;
-      background: rgba(255,255,255,0.95);
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.5s ease;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s forwards;
-      animation-delay: 0.5s;
+
+    .hero-content h1 {
+      font-size: 44px;
+      margin-bottom: 12px;
     }
-    .hero-form:hover { transform: translateY(-5px); }
-    .hero-form input, .hero-form select, .hero-form textarea {
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 12px;
-      width: 100%;
-      margin-bottom: 14px;
-      border-radius: 8px;
-      color: #111;
+
+    .hero-content p.lead {
+      font-size: 18px; color: var(--muted);
+      margin-bottom: 20px;
     }
+
+    /* 🔥 ROTATING TEXT */
+    .rotate-words {
+      display:inline-block;
+      font-weight:600;
+      color:#000;
+      position:relative;
+      width:260px;
+      height:26px;
+      overflow:hidden;
+    }
+
+    .rotate-words span {
+      position:absolute;
+      width:100%;
+      opacity:0;
+      transform:translateY(20px);
+      animation:rotateWord 10s linear infinite;
+    }
+
+    .rotate-words span:nth-child(1){ animation-delay:0s; }
+    .rotate-words span:nth-child(2){ animation-delay:2s; }
+    .rotate-words span:nth-child(3){ animation-delay:4s; }
+    .rotate-words span:nth-child(4){ animation-delay:6s; }
+    .rotate-words span:nth-child(5){ animation-delay:8s; }
+
+    @keyframes rotateWord {
+      0%   { opacity:0; transform:translateY(20px); }
+      10%  { opacity:1; transform:translateY(0); }
+      20%  { opacity:1; }
+      30%  { opacity:0; transform:translateY(-20px); }
+      100% { opacity:0; }
+    }
+
+    .badge {
+      display:inline-flex;
+      padding:10px 14px;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 5px 18px rgba(0,0,0,0.06);
+      font-size:14px;
+      font-weight:500;
+      margin-bottom:10px;
+    }
+
+    .hero-cta { display:flex; gap:14px; margin-top:10px; }
+
     .btn {
-      background: #00a6ff;
-      color: #fff;
-      padding: 14px 30px;
-      border-radius: 10px;
-      font-weight: 300;
-      display: inline-block;
-      margin-top: 10px;
-      transition: transform 0.3s;
-      border: none;
-      cursor: pointer;
-      animation: floatHero 3s ease-in-out infinite alternate;
+      background:var(--accent); color:#fff;
+      padding:14px 28px; border-radius:10px;
+      font-weight:600; border:none;
+      cursor:pointer; transition:0.3s;
     }
-    .btn:hover { transform: scale(1.04); }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(0,166,255,0.2); }
+
+    .secondary {
+      background:transparent;
+      border:1.5px solid #ddd;
+      padding:12px 20px;
+      border-radius:10px;
+      font-weight:600;
+    }
+
+    .hero-image-section {
+      flex:1;
+      border-radius:14px;
+      overflow:hidden;
+      min-height:520px;
+      box-shadow:0 12px 40px rgba(0,0,0,0.08);
+      opacity:0; transform:translateY(20px);
+      animation:fadeInUp 1.2s forwards;
+    }
+
+    .hero-image-section img {
+      width:100%; height:100%;
+      object-fit:cover;
+    }
+
+    @keyframes fadeInUp {
+      to { opacity:1; transform:translateY(0); }
+    }
+
 
     /* ===================== FEATURES ===================== */
-    .features { padding: 80px 6%; background: #f9f9f9; }
-    .feature-cards { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-    .feature-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 30px 20px;
-      width: 280px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, opacity 0.6s ease-out;
-      opacity: 0;
-      transform: translateY(30px);
+    .features {
+      padding: 80px 6%;
+      background: #f9f9f9;
     }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-    .feature-card.animate { opacity: 1; transform: translateY(0); }
-    .emoji { font-size: 40px; margin-bottom: 15px; }
+
+    .feature-cards {
+      display:flex; flex-wrap:wrap;
+      gap:30px; justify-content:center;
+    }
+
+    .feature-card {
+      background:#fff;
+      border-radius:14px;
+      width:280px; padding:30px 20px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      opacity:0; transform:translateY(25px);
+      transition:0.5s;
+    }
+
+    .feature-card.animate { opacity:1; transform:translateY(0); }
+
 
     /* ===================== PARTNERS ===================== */
-    .partners { padding: 80px 6%; text-align: center; }
-    .partner-logos { display: flex; justify-content: center; flex-wrap: wrap; gap: 45px; margin-top: 40px; }
-    .partner-card {
-      background: #fff;
-      padding: 18px 26px;
-      border-radius: 12px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-    }
-    .partner-card.animate { opacity: 1; transform: translateY(0); }
+    .partners { padding:80px 6%; text-align:center; }
+
 
     /* ===================== STATS ===================== */
     .stats {
-      padding: 80px 6%;
-      background: #e6f7ff;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      text-align: center;
+      padding:80px 6%; background:#e6f7ff;
+      display:flex; justify-content:center;
+      gap:40px; text-align:center; flex-wrap:wrap;
     }
+
     .stat-card {
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 14px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
+      background:#fff; padding:40px 30px;
+      border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      opacity:0; transform:translateY(25px);
+      transition:0.5s;
     }
-    .stat-card.animate { opacity: 1; transform: translateY(0); }
-    .stat-card h3 { font-size: 32px; color: #00a6ff; margin-bottom: 10px; }
+
+    .stat-card.animate{opacity:1; transform:translateY(0);}
+    .stat-card h3{font-size:32px; color:var(--accent);}
+
 
     /* ===================== TESTIMONIALS ===================== */
-    .testimonials { padding: 80px 6%; text-align: center; }
-    .testimonial-cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
-    .testimonial-card {
-      background: #f9f9f9;
-      padding: 30px;
-      border-radius: 14px;
-      width: 300px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
+    .testimonials { padding:80px 6%; text-align:center; }
+
+    .testimonial-cards {
+      display:flex; justify-content:center;
+      gap:30px; flex-wrap:wrap;
     }
-    .testimonial-card.animate { opacity: 1; transform: translateY(0); }
-    .testimonial-card p { font-style: italic; margin-bottom: 10px; }
+
+    .testimonial-card {
+      background:#f9f9f9; padding:30px;
+      border-radius:14px; width:300px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      opacity:0; transform:translateY(25px);
+      transition:0.5s;
+    }
+
 
     /* ===================== SINGLE SECTION ===================== */
-    .single-section { padding: 80px 6%; background: #e6f7ff; text-align: center; }
-    .single-section img { max-width: 100%; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-top: 40px; }
+    .single-section {
+      padding:80px 6%; text-align:center;
+      background:#e6f7ff;
+    }
+
+    .single-section img {
+      max-width:100%; border-radius:14px;
+      margin-top:24px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    }
+
 
     /* ===================== FOOTER ===================== */
-    footer { background: #f5f5f5; padding: 60px 6%; }
-
-    /* ===================== ANIMATIONS ===================== */
-    @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
-    @keyframes floatHero { to { transform: translateY(-10px); } }
-
-    /* ===================== RESPONSIVE ===================== */
-    @media(max-width:900px){
-      #hero { flex-direction: column; height: auto; text-align: center; }
-      .hero-image-section { min-height: 300px; }
-      .hero-form { width: 100%; max-width: 400px; }
-      .feature-cards, .testimonial-cards, .stats { flex-direction: column; }
+    footer {
+      background:#f5f5f5;
+      padding:60px 6%;
     }
+
+
+    /* ===================== MOBILE RESPONSIVE FIXES ===================== */
+    @media (max-width: 768px) {
+
+      /* Navbar */
+      nav {
+        padding: 14px 6%;
+      }
+      .logo {
+        font-size: 22px;
+      }
+
+      /* HERO */
+      #hero {
+        flex-direction: column;
+        height: auto;
+        padding-top: 40px;
+        text-align: center;
+      }
+      .hero-content {
+        max-width: 100%;
+        padding: 0 5px;
+      }
+      .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.3;
+      }
+      .hero-content .lead {
+        font-size: 16px;
+      }
+      .rotate-words {
+        width: 100%;
+        height: 22px;
+      }
+      .hero-image-section {
+        width: 100%;
+        height: 260px;
+        min-height: 230px;
+        margin-top: 20px;
+      }
+      .hero-bullets {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-cta a {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* FEATURES */
+      .feature-cards {
+        grid-template-columns: 1fr !important;
+      }
+      .feature-card {
+        width: 100% !important;
+      }
+
+      /* PARTNERS */
+      .partner-logos {
+        grid-template-columns: 1fr !important;
+      }
+      .partner-card {
+        font-size: 18px;
+        padding: 18px;
+      }
+
+      /* STATS */
+      .stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .stat-card {
+        width: 100% !important;
+      }
+
+      /* TESTIMONIALS */
+      .testimonial-cards {
+        flex-direction: column;
+      }
+      .testimonial-card {
+        width: 100% !important;
+      }
+
+      /* SINGLE SECTION */
+      .single-section img {
+        width: 100%;
+      }
+
+      /* FOOTER */
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      form input, form button {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav>
     <div class="logo">
-      <span style="color:#00a6ff;">Strategy</span>First.in
+      <span class="accent">Strategy</span>First.in
     </div>
+
     <div class="nav-links">
       <a href="#hero">Home</a>
       <a href="services.html">Services</a>
@@ -235,79 +382,231 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="hero">
-    <div class="hero-image-section">
-      <img src="images/Digital Marketing Agency Instagram Post.png" alt="Business Growth">
-    </div>
 
-    <div class="hero-form">
-      <h3>Get Free Business Audit</h3>
-      <p>Fill the form and our team will reach out within 24 hours.</p>
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" style="
+background-image: url('https://i.imgur.com/7Nq3CkC.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+padding: 0 6%;
+display: flex;
+align-items: center;
+gap: 40px;
+height: 100vh;
+min-height: 640px;
+margin-top: 100px;
+position: relative;
+z-index: 1;
+">
 
-      <form action="https://formsubmit.co/shindejivan55@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://strategyfirst.in/">
+<div class="hero-content" style="position: relative; z-index: 3;">
+  <div class="badge">Trusted Growth Agency</div>
 
-        <input type="text" name="name" placeholder="Full Name" required pattern="^[A-Za-z\s]+$">
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="text" name="phone" placeholder="Phone Number" required>
+  <h1>Grow Your Business With Data-Driven Digital Marketing</h1>
 
-        <select name="service" required>
-          <option value="">Select Service</option>
-          <option>Digital Marketing</option>
-          <option>Website Development</option>
-          <option>Social Media Growth</option>
-        </select>
+  <p class="lead">
+    We help startups and SMEs scale predictably with
+    <span class="rotate-words">
+      <span>Digital Marketing</span>
+      <span>Website Development</span>
+      <span>SEO & Google Ranking</span>
+      <span>Social Media Growth</span>
+      <span>Automation Systems</span>
+    </span>
+  </p>
 
-        <textarea name="message" placeholder="Tell us about your business..." rows="3"></textarea>
+  <div class="hero-bullets">
+    <div class="badge">Increase Traffic</div>
+    <div class="badge">Generate Leads</div>
+    <div class="badge">Automate Growth</div>
+  </div>
 
-        <button class="btn" type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
+  <div class="hero-cta">
+    <a href="contact.html" class="btn">Get a Free Audit</a>
+    <a href="services.html" class="secondary">View Services</a>
+  </div>
 
-  <!-- FEATURES / SERVICES CARDS -->
+  <div style="margin-top:16px;color:var(--muted);font-size:14px;">
+    <strong>250+</strong> campaigns • <strong>95%</strong> client retention • <strong>120+</strong> clients served
+  </div>
+</div>
+
+<div class="hero-image-section" style="position:relative; z-index:3;">
+  <img src="images/Digital Marketing Agency Instagram Post.png" alt="Business Growth">
+</div>
+
+</section>
+
+
+
+
+  <!-- ===================== FEATURES ===================== -->
   <section class="features">
-    <h2 style="text-align:center;color:#00a6ff;margin-bottom:40px;">Our Core Services</h2>
-    <div class="feature-cards">
-      <div class="feature-card"><div class="emoji">📊</div><h3>Data Analysis</h3><p>Analyze your business data to identify trends and improve decisions.</p></div>
-      <div class="feature-card"><div class="emoji">⚡</div><h3>Performance Optimisation</h3><p>Boost website speed, conversions, and ROI.</p></div>
-      <div class="feature-card"><div class="emoji">🚀</div><h3>SEO & Visibility</h3><p>Rank higher and get discovered by your audience.</p></div>
-      <div class="feature-card"><div class="emoji">📱</div><h3>Social Media Growth</h3><p>Grow your brand on Instagram, Facebook, and LinkedIn.</p></div>
-      <div class="feature-card"><div class="emoji">🤖</div><h3>Marketing Automation</h3><p>Automate tasks and save time with AI systems.</p></div>
-      <div class="feature-card"><div class="emoji">📝</div><h3>Content Strategy</h3><p>Create content that attracts & converts customers.</p></div>
+    <h2 style="text-align:center;color:var(--accent);margin-bottom:40px;">Our Core Services</h2>
+  
+    <div class="feature-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
+  
+      <!-- Data Analysis -->
+      <div class="feature-card">
+        <div class="icon" style="width:48px;margin:0 auto 15px;">
+          <svg viewBox="0 0 512 512" fill="#00a6ff">
+            <path d="M496 384h-16V80c0-17.67-14.33-32-32-32H64c-17.67 0-32 
+            14.33-32 32v304H16c-8.84 0-16 7.16-16 16v32c0 
+            8.84 7.16 16 16 16h480c8.84 0 16-7.16 
+            16-16v-32c0-8.84-7.16-16-16-16zM96 96h320v288H96V96zm64 
+            64h64v160h-64V160zm96 64h64v96h-64v-96zm96-32h64v128h-64V192z"/>
+          </svg>
+        </div>
+        <h3>Data Analysis</h3>
+        <p>Analyze business numbers to find growth opportunities.</p>
+      </div>
+  
+      <!-- Performance Optimization -->
+      <div class="feature-card">
+        <div class="icon" style="width:48px;margin:0 auto 15px;">
+          <svg viewBox="0 0 512 512" fill="#00a6ff">
+            <path d="M256 32C132.3 32 32 132.3 32 
+            256s100.3 224 224 224 224-100.3 
+            224-224S379.7 32 256 32zm0 
+            384a160 160 0 1 1 160-160 160.18 160.18 
+            0 0 1-160 160zm-16-272h32v144h-32zm0 
+            176h32v32h-32z"/>
+          </svg>
+        </div>
+        <h3>Performance Optimisation</h3>
+        <p>Boost website speed, conversions, and ROI.</p>
+      </div>
+  
+      <!-- SEO -->
+      <div class="feature-card">
+        <div class="icon" style="width:48px;margin:0 auto 15px;">
+          <svg viewBox="0 0 512 512" fill="#00a6ff">
+            <path d="M505 442.7L405.3 
+            343c28.4-34.9 45.7-79 45.7-127C451 
+            103.5 357.5 10 241 10S31 103.5 31 
+            216s93.5 206 210 206c48 0 92.1-17.3 
+            127-45.7l99.7 99.7c4.5 4.5 10.6 7 
+            17 7s12.5-2.5 17-7c9.4-9.4 
+            9.4-24.6 0-34zM241 370c-84.1 
+            0-152-67.9-152-152S156.9 66 
+            241 66s152 67.9 152 152-67.9 
+            152-152 152z"/>
+          </svg>
+        </div>
+        <h3>SEO & Visibility</h3>
+        <p>Rank higher and get discovered by your audience.</p>
+      </div>
+  
+      <!-- Social Media -->
+      <div class="feature-card">
+        <div class="icon" style="width:48px;margin:0 auto 15px;">
+          <svg viewBox="0 0 512 512" fill="#00a6ff">
+            <path d="M349.33 69.33H162.67A93.42 
+            93.42 0 0 0 69.33 162.67v186.66A93.42 
+            93.42 0 0 0 162.67 442.67h186.66A93.42 
+            93.42 0 0 0 442.67 349.33V162.67A93.42 
+            93.42 0 0 0 349.33 69.33zm-93.33 
+            256a92 92 0 1 1 92-92 92.1 92.1 
+            0 0 1-92 92z"/>
+          </svg>
+        </div>
+        <h3>Social Media Growth</h3>
+        <p>Grow your brand on Instagram, Facebook, and LinkedIn.</p>
+      </div>
+  
+      <!-- Marketing Automation -->
+      <div class="feature-card">
+        <div class="icon" style="width:48px;margin:0 auto 15px;">
+          <svg viewBox="0 0 512 512" fill="#00a6ff">
+            <path d="M448 32H64A32 32 0 0 0 32 
+            64v384a32 32 0 0 0 32 32h384a32 
+            32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-32 
+            384H96V96h320z"/>
+          </svg>
+        </div>
+        <h3>Marketing Automation</h3>
+        <p>Automate tasks and save time with AI systems.</p>
+      </div>
+  
+      <!-- Content Strategy -->
+      <div class="feature-card">
+        <div class="icon" style="width:48px;margin:0 auto 15px;">
+          <svg viewBox="0 0 512 512" fill="#00a6ff">
+            <path d="M256 32C132.3 32 32 132.3 32 
+            256s100.3 224 224 224 224-100.3 
+            224-224S379.7 32 256 32zm96 
+            320H160v-32h192zm0-96H160v-32h192zm0-96H160V128h192z"/>
+          </svg>
+        </div>
+        <h3>Content Strategy</h3>
+        <p>Create content that attracts & converts customers.</p>
+      </div>
+  
     </div>
   </section>
 
-  <!-- PARTNERS -->
-  <section class="partners">
-    <h2>Trusted By Growing Brands</h2>
-    <div class="partner-logos">
-      <div class="partner-card">Pexavel.com</div>
-      <div class="partner-card">We Reach Advertising</div>
-      <div class="partner-card">Hunt Campus</div>
-      <div class="partner-card">Evolve Digital</div>
-    </div>
-  </section>
 
-  <!-- STATS -->
+  <!-- ===================== PARTNERS ===================== -->
+<section class="partners" style="padding:80px 6%; text-align:center;">
+  <h2 style="font-size:36px; font-weight:600; margin-bottom:50px; color:#00a6ff;">
+    Trusted By Growing Brands
+  </h2>
+
+  <div class="partner-logos" 
+       style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+       gap:30px; max-width:1100px; margin:0 auto;">
+
+    <!-- Cards -->
+    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+      Pexavel.com
+    </div>
+
+    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+      We Reach Advertising
+    </div>
+
+    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+      Hunt Campus
+    </div>
+
+    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+      Evolve Digital
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ===================== STATS ===================== -->
   <section class="stats">
     <div class="stat-card"><h3>120+</h3><p>Clients Served</p></div>
     <div class="stat-card"><h3>250+</h3><p>Campaigns Launched</p></div>
     <div class="stat-card"><h3>95%</h3><p>Client Retention</p></div>
   </section>
 
-  <!-- TESTIMONIALS -->
+
+
+  <!-- ===================== TESTIMONIALS ===================== -->
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
+
     <div class="testimonial-cards">
-      <div class="testimonial-card"><p>"StrategyFirst.in doubled our lead generation in 3 months!"</p><h4>– John Doe, CEO</h4></div>
-      <div class="testimonial-card"><p>"Our website conversions improved tremendously thanks to their team."</p><h4>– Jane Smith, Marketing Head</h4></div>
+      <div class="testimonial-card">
+        <p>"StrategyFirst.in doubled our lead generation in 3 months!"</p>
+        <h4>– John Doe, CEO</h4>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"Our website conversions improved tremendously thanks to their team."</p>
+        <h4>– Jane Smith, Marketing Head</h4>
+      </div>
     </div>
   </section>
 
-  <!-- SINGLE SECTION -->
+
+
+  <!-- ===================== SINGLE SECTION ===================== -->
   <section class="single-section">
     <h2>Elevate Your Business Today</h2>
     <p>We combine strategy, creativity, and automation to accelerate your business growth.</p>
@@ -317,71 +616,124 @@
     <img src="images/ image.1.jpg" alt="Business Growth">
   </section>
 
-  <!-- FOOTER -->
+
+
+  <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="footer-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:40px;">
-      <div class="footer-section">
+  
+      <!-- Contact Info -->
+      <div class="footer-section" style="flex:1; min-width:220px;">
         <h4>Contact Us</h4>
         <p>123 Digital Avenue,<br>Maharashtra, India</p>
-        <p>Email: <a href="mailto:contact@strategyfirst.in">contact@strategyfirst.in</a></p>
+        <p>Email: <a href="mailto:strategyfirst.digital@gmail.com">strategyfirst.digital@gmail.com</a></p>
         <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
       </div>
-      <div class="footer-section">
+  
+      <!-- Quick Links -->
+      <div class="footer-section" style="flex:1; min-width:180px;">
         <h4>Quick Links</h4>
         <ul style="list-style:none;padding:0;line-height:2;">
-          <li><a href="#hero">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-section">
+  
+      <!-- Social Icons -->
+      <div class="footer-section" style="flex:1; min-width:180px;">
         <h4>Follow Us</h4>
-        <div style="display:flex; gap:15px; font-size:20px;">
-          <a href="#">🌐</a>
-          <a href="#">📘</a>
-          <a href="#">🐦</a>
-          <a href="#">📸</a>
+        <div style="display:flex; gap:18px; align-items:center;">
+  
+          <!-- Email Icon -->
+          <a href="mailto:strategyfirst.digital@gmail.com" target="_blank" style="width:26px;">
+            <svg viewBox="0 0 512 512" fill="#111">
+              <path d="M502.3 190.8L352 303.6 201.7 190.8 10.7 352c-5.9 4.9-9.7 12.3-9.7 20.2v88c0 13.3 10.7 24 24 24h464c13.3 0 24-10.7 24-24v-88c0-7.9-3.8-15.3-9.7-20.2L310.3 190.8z"/>
+              <path d="M256 288L20.8 96.5C14.5 91.5 8 88 0 88v16l256 192 256-192V88c-8 0-14.5 3.5-20.8 8.5L256 288z"/>
+            </svg>
+          </a>
+  
+          <!-- Facebook Icon -->
+          <a href="https://www.facebook.com/profile.php?id=61584602244674" target="_blank" style="width:26px;">
+            <svg viewBox="0 0 320 512" fill="#1877F2">
+              <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
+              12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
+              0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73V288z"/>
+            </svg>
+          </a>
+  
+          <!-- Instagram Icon -->
+          <a href="https://www.instagram.com/strategy_.first/" target="_blank" style="width:26px;">
+            <svg viewBox="0 0 512 512" fill="#E1306C">
+              <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 
+              69.33 162.67v186.66A93.42 93.42 0 0 0 
+              162.67 442.67h186.66A93.42 93.42 0 0 0 
+              442.67 349.33V162.67A93.42 93.42 0 0 
+              0 349.33 69.33zm64 280a64.08 64.08 0 0 
+              1-64 64H162.67a64.08 64.08 0 0 
+              1-64-64V162.67a64.08 64.08 0 0 
+              1 64-64h186.66a64.08 64.08 
+              0 0 1 64 64z"/>
+              <path d="M256 164a92 92 0 1 
+              0 92 92 92.1 92.1 0 0 0-92-92zm0 
+              152a60 60 0 1 1 60-60 60.07 60.07 
+              0 0 1-60 60z"/>
+              <circle cx="346" cy="166" r="20"/>
+            </svg>
+          </a>
+  
         </div>
       </div>
-      <div class="footer-section">
+  
+      <!-- Newsletter -->
+      <div class="footer-section" style="flex:1; min-width:220px;">
         <h4>Newsletter</h4>
         <p>Subscribe for updates and offers:</p>
         <form style="display:flex; flex-direction:column; gap:10px;">
-          <input type="email" placeholder="Your email" required>
-          <button type="submit" class="btn" style="padding:12px;">Subscribe</button>
+          <input type="email" placeholder="Your email" required style="padding:12px; border-radius:8px; border:1px solid #ddd;">
+          <button type="submit" style="padding:12px;background:#00a6ff;color:white;border:none;border-radius:6px;cursor:pointer;">
+            Subscribe
+          </button>
         </form>
       </div>
+  
     </div>
-
+  
     <div style="text-align:center;padding:20px 6%;border-top:1px solid #ddd;font-size:14px;color:#555;margin-top:40px;">
-      © 2025 StrategyFirst.in – All Rights Reserved |
+      © 2025 StrategyFirst.in – All Rights Reserved. |
       <a href="#">Privacy Policy</a> |
       <a href="#">Terms of Service</a>
     </div>
   </footer>
+  
 
+
+
+  <!-- ===================== SCRIPT ===================== -->
   <script>
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) { nav.classList.add('scrolled'); }
-      else { nav.classList.remove('scrolled'); }
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
     });
 
-    // Animate elements on scroll
+    // Animation triggers
     function animateOnScroll() {
-      const elements = document.querySelectorAll('.feature-card, .stat-card, .testimonial-card, .partner-card');
-      const windowBottom = window.innerHeight;
+      const elements = document.querySelectorAll(".feature-card, .stat-card, .testimonial-card, .partner-card");
+      const winBottom = window.innerHeight;
 
       elements.forEach(el => {
-        const elTop = el.getBoundingClientRect().top;
-        if (elTop < windowBottom - 50) { el.classList.add('animate'); }
+        if (el.getBoundingClientRect().top < winBottom - 50) {
+          el.classList.add("animate");
+        }
       });
     }
 
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
+    window.addEventListener("scroll", animateOnScroll);
+    window.addEventListener("load", animateOnScroll);
   </script>
+
 </body>
 </html>
