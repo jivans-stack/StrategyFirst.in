@@ -361,6 +361,131 @@
         width: 100%;
       }
     }
+    <style>
+
+/* GLOBAL FIX — remove sideways scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix all images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix grids overflowing mobile */
+@media (max-width: 991px) {
+
+  /* Hero Section */
+  #hero {
+    flex-direction: column !important;
+    text-align: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    margin-top: 120px !important;
+    padding: 40px 5% !important;
+  }
+
+  #hero div {
+    text-align: center !important;
+  }
+
+  /* Fix rotated words */
+  .rotate-words {
+    width: 100% !important;
+    height: 24px !important;
+    text-align: center !important;
+  }
+
+  /* Fix hero stats */
+  #hero .stats-box {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Feature grid */
+  .feature-cards {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+
+  .feature-card {
+    width: 100% !important;
+  }
+
+  /* Partner logo grid */
+  .partner-logos {
+    grid-template-columns: 1fr !important;
+  }
+
+  .partner-card {
+    width: 100% !important;
+  }
+
+  /* Stats Cards */
+  .stats {
+    flex-direction: column !important;
+  }
+
+  .stat-card {
+    width: 100% !important;
+  }
+
+  /* Testimonials */
+  .testimonial-cards {
+    flex-direction: column !important;
+  }
+
+  .testimonial-card {
+    width: 100% !important;
+  }
+
+  /* Awards */
+  .award-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .award-card {
+    width: 100% !important;
+  }
+
+  /* Tools section */
+  .tools-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tool-card {
+    width: 100% !important;
+  }
+
+  /* Timeline */
+  .growth-cards {
+    flex-direction: column !important;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .footer-section {
+    width: 100% !important;
+  }
+}
+
+/* TABLET FIX */
+@media (max-width: 1200px) {
+  .feature-cards,
+  .tools-grid,
+  .award-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+</style>
 
   </style>
 </head>
@@ -373,22 +498,24 @@
       <span class="accent">Strategy</span>First.in
     </div>
   
-    <div class="nav-links">
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+  
+    <div class="nav-links" id="navMenu">
       <a href="#hero">Home</a>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
-       
       <a href="contact.html">Contact Us</a>
       <a class="login-btn" href="login.html">Login</a>
     </div>
   </nav>
   
   <style>
-  /* Main Header */
+  /* ================= HEADER ================== */
   .pro-header {
     width: 100%;
-    padding: 20px 6%;
-    margin-top: 10px; 
+    padding: 18px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -397,22 +524,23 @@
     top: 0;
     z-index: 999;
     box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-    border-bottom: 1.5px solid rgba(0,166,255,0.15); /* Blue bottom line */
+    border-bottom: 1.5px solid rgba(0,166,255,0.15);
   }
   
-  /* Logo Bigger + Bolder */
+  /* Logo */
   .logo {
-    font-size: 34px;       /* Bigger */
-    font-weight: 800;      /* Strong bold */
-    letter-spacing: 0.4px; /* Premium spacing */
+    font-size: 32px;
+    font-weight: 800;
     color: #111;
   }
+  .accent { color: #00a6ff; }
   
-  .accent { 
-    color: #00a6ff; 
+  /* -------- DESKTOP MENU -------- */
+  .nav-links {
+    display: flex;
+    align-items: center;
   }
   
-  /* Nav Links */
   .nav-links a {
     margin-left: 30px;
     font-size: 18px;
@@ -422,7 +550,7 @@
     transition: 0.3s ease;
   }
   
-  /* Hover underline animation */
+  /* Hover underline */
   .nav-links a::after {
     content: "";
     position: absolute;
@@ -433,14 +561,8 @@
     bottom: -6px;
     transition: 0.3s ease;
   }
-  
-  .nav-links a:hover {
-    color: #00a6ff;
-  }
-  
-  .nav-links a:hover::after {
-    width: 100%;
-  }
+  .nav-links a:hover { color: #00a6ff; }
+  .nav-links a:hover::after { width: 100%; }
   
   /* Login Button */
   .login-btn {
@@ -453,22 +575,73 @@
     font-size: 17px;
     transition: 0.3s ease;
   }
-  
   .login-btn:hover {
     background: #0087d1;
-    transform: translateY(-2px); /* Slight lift */
+    transform: translateY(-2px);
+  }
+  
+  /* -------- HAMBURGER (MOBILE ONLY) -------- */
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* =============== MOBILE STYLE =============== */
+  @media (max-width: 850px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-links {
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      width: 75%;
+      height: 100vh;
+      background: #ffffff;
+      flex-direction: column;
+      padding-top: 40px;
+      gap: 25px;
+      transition: 0.35s ease;
+      box-shadow: -8px 0 20px rgba(0,0,0,0.1);
+    }
+  
+    .nav-links a {
+      margin: 0;
+      font-size: 20px;
+    }
+  
+    .login-btn {
+      margin: 0;
+      font-size: 19px;
+      width: 70%;
+      text-align: center;
+    }
+  
+    /* Show menu */
+    .nav-links.active {
+      right: 0;
+    }
   }
   </style>
+  
+  <script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+  </script>
   
   
   
   <!-- ===================== HERO ===================== -->
   <section id="hero" style="
-  padding: 40px 6%; /* Reduced padding to remove top empty space */
-  height: 90vh; /* Makes hero full-screen and fills space */
+  padding: 40px 6%;
+  min-height: 100vh;
   display: flex;
-  align-items: center; /* Centers text vertically */
-  justify-content: flex-end; 
+  align-items: center;
+  justify-content: flex-end;
   background: url('images/ bg.1.jpg');
   background-size: cover;
   background-position: center right;
@@ -476,7 +649,10 @@
 ">
 
   <!-- HERO TEXT ONLY -->
-  <div style="max-width: 560px; text-align: right;">
+  <div class="hero-box" style="
+    max-width: 560px;
+    text-align: right;
+  ">
 
     <div class="badge" style="
       background:#e3f3ff;
@@ -490,7 +666,7 @@
     </div>
 
     <h1 style="
-      font-size:54px; /* Bigger main heading */
+      font-size:54px;
       line-height:1.2;
       margin:20px 0;
       color:#111;
@@ -500,7 +676,7 @@
     </h1>
 
     <p style="
-      font-size:20px; /* Bigger subtitle */
+      font-size:20px;
       color:#444;
       margin-bottom:28px;
       line-height:1.5;">
@@ -531,12 +707,13 @@
     </div>
 
     <!-- SMALL STATS -->
-    <div style="
+    <div class="hero-stats" style="
       margin-top:45px;
       display:flex;
       gap:35px;
-      justify-content:flex-end;">
-      
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    ">
       <div style="text-align:center;">
         <h3 style="margin:0; font-size:28px; color:#00a6ff;">250+</h3>
         <p style="margin:0; font-size:15px; color:#666;">Campaigns</p>
@@ -551,7 +728,6 @@
         <h3 style="margin:0; font-size:28px; color:#00a6ff;">95%</h3>
         <p style="margin:0; font-size:15px; color:#666;">Retention</p>
       </div>
-
     </div>
 
   </div>
