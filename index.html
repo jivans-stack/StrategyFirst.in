@@ -368,81 +368,225 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
+  <nav class="pro-header">
     <div class="logo">
       <span class="accent">Strategy</span>First.in
     </div>
-
+  
     <div class="nav-links">
       <a href="#hero">Home</a>
-      <a href="services.html">Services</a>
       <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+       
       <a href="contact.html">Contact Us</a>
-      <a href="login.html">Login</a>
+      <a class="login-btn" href="login.html">Login</a>
     </div>
   </nav>
-
-
+  
+  <style>
+  /* Main Header */
+  .pro-header {
+    width: 100%;
+    padding: 20px 6%;
+    margin-top: 10px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    border-bottom: 1.5px solid rgba(0,166,255,0.15); /* Blue bottom line */
+  }
+  
+  /* Logo Bigger + Bolder */
+  .logo {
+    font-size: 34px;       /* Bigger */
+    font-weight: 800;      /* Strong bold */
+    letter-spacing: 0.4px; /* Premium spacing */
+    color: #111;
+  }
+  
+  .accent { 
+    color: #00a6ff; 
+  }
+  
+  /* Nav Links */
+  .nav-links a {
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    position: relative;
+    transition: 0.3s ease;
+  }
+  
+  /* Hover underline animation */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00a6ff;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00a6ff;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    padding: 10px 24px;
+    background: #00a6ff;
+    color: #fff !important;
+    border-radius: 8px;
+    margin-left: 35px;
+    font-weight: 600;
+    font-size: 17px;
+    transition: 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background: #0087d1;
+    transform: translateY(-2px); /* Slight lift */
+  }
+  </style>
+  
+  
+  
   <!-- ===================== HERO ===================== -->
   <section id="hero" style="
-padding: 0 6%;
-display: flex;
-align-items: center;
-gap: 40px;
-height: 100vh;
-min-height: 640px;
-margin-top: 100px;
-position: relative;
-z-index: 1;
-background:none !important;
-background-color:#ffffff;">
+  padding: 40px 6%; /* Reduced padding to remove top empty space */
+  height: 90vh; /* Makes hero full-screen and fills space */
+  display: flex;
+  align-items: center; /* Centers text vertically */
+  justify-content: flex-end; 
+  background: url('images/ bg.1.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+">
 
-<div class="hero-content" style="position: relative; z-index: 3;">
-  <div class="badge">Trusted Growth Agency</div>
+  <!-- HERO TEXT ONLY -->
+  <div style="max-width: 560px; text-align: right;">
 
-  <h1>Grow Your Business With Data-Driven Digital Marketing</h1>
+    <div class="badge" style="
+      background:#e3f3ff;
+      color:#00a6ff;
+      display:inline-block;
+      padding:8px 18px;
+      border-radius:20px;
+      font-size:15px;
+      font-weight:600;">
+      Trusted Growth Agency
+    </div>
 
-  <p class="lead">
-    We help startups and SMEs scale predictably with
-    <span class="rotate-words">
-      <span>Digital Marketing</span>
-      <span>Website Development</span>
-      <span>SEO & Google Ranking</span>
-      <span>Social Media Growth</span>
-      <span>Automation Systems</span>
-    </span>
-  </p>
+    <h1 style="
+      font-size:54px; /* Bigger main heading */
+      line-height:1.2;
+      margin:20px 0;
+      color:#111;
+      font-weight:700;">
+      Unlock Predictable Growth With 
+      <span style="color:#00a6ff;">AI-Driven Marketing Systems</span>
+    </h1>
 
-  <div class="hero-bullets">
-    <div class="badge">Increase Traffic</div>
-    <div class="badge">Generate Leads</div>
-    <div class="badge">Automate Growth</div>
+    <p style="
+      font-size:20px; /* Bigger subtitle */
+      color:#444;
+      margin-bottom:28px;
+      line-height:1.5;">
+      We help startups and SMEs scale using data, automation, SEO, performance ads 
+      and conversion-focused websites.
+    </p>
+
+    <div style="margin-top:10px;">
+      <a href="contact.html" style="
+        background:#00a6ff;
+        color:white;
+        padding:14px 30px;
+        border-radius:8px;
+        font-weight:600;
+        text-decoration:none;
+        font-size:17px;">
+        Get Free Audit
+      </a>
+
+      <a href="services.html" style="
+        color:#00a6ff;
+        font-weight:600;
+        font-size:17px;
+        margin-left:15px;
+        text-decoration:none;">
+        View Services
+      </a>
+    </div>
+
+    <!-- SMALL STATS -->
+    <div style="
+      margin-top:45px;
+      display:flex;
+      gap:35px;
+      justify-content:flex-end;">
+      
+      <div style="text-align:center;">
+        <h3 style="margin:0; font-size:28px; color:#00a6ff;">250+</h3>
+        <p style="margin:0; font-size:15px; color:#666;">Campaigns</p>
+      </div>
+
+      <div style="text-align:center;">
+        <h3 style="margin:0; font-size:28px; color:#00a6ff;">120+</h3>
+        <p style="margin:0; font-size:15px; color:#666;">Clients</p>
+      </div>
+
+      <div style="text-align:center;">
+        <h3 style="margin:0; font-size:28px; color:#00a6ff;">95%</h3>
+        <p style="margin:0; font-size:15px; color:#666;">Retention</p>
+      </div>
+
+    </div>
+
   </div>
-
-  <div class="hero-cta">
-    <a href="contact.html" class="btn">Get a Free Audit</a>
-    <a href="services.html" class="secondary">View Services</a>
-  </div>
-
-  <div style="margin-top:16px;color:var(--muted);font-size:14px;">
-    <strong>250+</strong> campaigns • <strong>95%</strong> client retention • <strong>120+</strong> clients served
-  </div>
-</div>
-
-<div class="hero-image-section" style="position:relative; z-index:3;">
-  <img src="images/Digital Marketing Agency Instagram Post.png" alt="Business Growth">
-</div>
 
 </section>
 
 
-
-
   <!-- ===================== FEATURES ===================== -->
   <section class="features">
-    <h2 style="text-align:center;color:var(--accent);margin-bottom:40px;">Our Core Services</h2>
+    <h2 style="
+    font-size:36px; 
+    font-weight:700; 
+    text-align:center; 
+    margin-bottom:15px; 
+    color:#00a6ff;
+    letter-spacing:0.5px;
+    font-family:'Poppins', sans-serif;
+  ">
+     Our Core Services
+  </h2>
   
-    <div class="feature-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
+  <div style="
+    width:80px; 
+    height:4px; 
+    background:#00a6ff; 
+    margin:0 auto 40px auto; 
+    border-radius:2px;
+  "></div>
+    <div class="feature-cards" 
+         style="
+         display:grid;
+         grid-template-columns:repeat(3, 1fr);
+         gap:25px;
+         max-width:1000px;
+         margin:0 auto;">
   
       <!-- Data Analysis -->
       <div class="feature-card">
@@ -458,7 +602,7 @@ background-color:#ffffff;">
         <h3>Data Analysis</h3>
         <p>Analyze business numbers to find growth opportunities.</p>
       </div>
-  
+
       <!-- Performance Optimization -->
       <div class="feature-card">
         <div class="icon" style="width:48px;margin:0 auto 15px;">
@@ -494,7 +638,7 @@ background-color:#ffffff;">
         <h3>SEO & Visibility</h3>
         <p>Rank higher and get discovered by your audience.</p>
       </div>
-  
+
       <!-- Social Media -->
       <div class="feature-card">
         <div class="icon" style="width:48px;margin:0 auto 15px;">
@@ -511,7 +655,7 @@ background-color:#ffffff;">
         <h3>Social Media Growth</h3>
         <p>Grow your brand on Instagram, Facebook, and LinkedIn.</p>
       </div>
-  
+
       <!-- Marketing Automation -->
       <div class="feature-card">
         <div class="icon" style="width:48px;margin:0 auto 15px;">
@@ -525,7 +669,7 @@ background-color:#ffffff;">
         <h3>Marketing Automation</h3>
         <p>Automate tasks and save time with AI systems.</p>
       </div>
-  
+
       <!-- Content Strategy -->
       <div class="feature-card">
         <div class="icon" style="width:48px;margin:0 auto 15px;">
@@ -539,16 +683,33 @@ background-color:#ffffff;">
         <h3>Content Strategy</h3>
         <p>Create content that attracts & converts customers.</p>
       </div>
-  
+
     </div>
-  </section>
+</section>
+
 
 
   <!-- ===================== PARTNERS ===================== -->
 <section class="partners" style="padding:80px 6%; text-align:center;">
-  <h2 style="font-size:36px; font-weight:600; margin-bottom:50px; color:#00a6ff;">
-    Trusted By Growing Brands
-  </h2>
+  <h2 style="
+  font-size:36px; 
+  font-weight:700; 
+  text-align:center; 
+  margin-bottom:15px; 
+  color:#00a6ff;
+  letter-spacing:0.5px;
+  font-family:'Poppins', sans-serif;
+">
+   Trusted By Growing Brands
+</h2>
+
+<div style="
+  width:80px; 
+  height:4px; 
+  background:#00a6ff; 
+  margin:0 auto 40px auto; 
+  border-radius:2px;
+"></div>
 
   <div class="partner-logos" 
        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -576,21 +737,126 @@ background-color:#ffffff;">
 
 
   <!-- ===================== STATS ===================== -->
-  <section class="stats">
-    <div class="stat-card"><h3>120+</h3><p>Clients Served</p></div>
-    <div class="stat-card"><h3>250+</h3><p>Campaigns Launched</p></div>
-    <div class="stat-card"><h3>95%</h3><p>Client Retention</p></div>
-  </section>
+  <section style="
+  padding:80px 6%; 
+  background:#ffffff;
+  text-align:center;
+">
+
+  <!-- TITLE -->
+  <h2 style="
+  font-size:36px; 
+  font-weight:700; 
+  text-align:center; 
+  margin-bottom:15px; 
+  color:#00a6ff;
+  letter-spacing:0.5px;
+  font-family:'Poppins', sans-serif;
+">
+  We Deliver Results That Matter
+</h2>
+
+<div style="
+  width:80px; 
+  height:4px; 
+  background:#00a6ff; 
+  margin:0 auto 40px auto; 
+  border-radius:2px;
+"></div>
+
+  <!-- SUBTEXT -->
+  <p style="
+    font-size:18px; 
+    color:#444; 
+    max-width:700px; 
+    margin:0 auto 40px auto;
+    line-height:1.6;
+  ">
+    Our agency focuses on generating <strong>quality leads</strong>, 
+    <strong>building strong brands</strong>, 
+    and delivering <strong>proven SEO results</strong> to help your business grow consistently.
+  </p>
+
+  <!-- RESULT FEATURES -->
+  <div style="
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+  ">
+      <div style="
+        background:#f5faff;
+        padding:20px 25px;
+        border-radius:14px;
+        width:300px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.06);
+        font-size:16px;
+        color:#333;
+        line-height:1.5;
+      ">
+        ⭐ <strong>Qualified & High-Intent Leads</strong><br>
+        Lead campaigns designed for conversion.
+      </div>
+
+      <div style="
+        background:#f5faff;
+        padding:20px 25px;
+        border-radius:14px;
+        width:300px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.06);
+        font-size:16px;
+        color:#333;
+        line-height:1.5;
+      ">
+        ⭐ <strong>Brand Growth & Management</strong><br>
+        Build a consistent and powerful online presence.
+      </div>
+
+      <div style="
+        background:#f5faff;
+        padding:20px 25px;
+        border-radius:14px;
+        width:300px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.06);
+        font-size:16px;
+        color:#333;
+        line-height:1.5;
+      ">
+        ⭐ <strong>SEO Performance</strong><br>
+        Improve rankings, traffic & visibility.
+      </div>
+  </div>
+
+   
+</section>
 
 
 
-  <!-- ===================== TESTIMONIALS ===================== -->
+   
  <!-- ===================== TESTIMONIALS ===================== -->
-<section class="testimonials" style="padding:80px 6%; text-align:center;">
+ <section class="testimonials" style="padding:80px 6%; text-align:center;">
 
-  <h2 style="font-size:32px; font-weight:600; margin-bottom:40px;">
-    What Our Clients Say
-  </h2>
+  <h2 style="
+  font-size:36px; 
+  font-weight:700; 
+  text-align:center; 
+  margin-bottom:15px; 
+  color:#00a6ff;
+  letter-spacing:0.5px;
+  font-family:'Poppins', sans-serif;
+">
+  TESTIMONIALS
+</h2>
+
+<div style="
+  width:80px; 
+  height:4px; 
+  background:#00a6ff; 
+  margin:0 auto 40px auto; 
+  border-radius:2px;
+"></div>
+
 
   <div class="testimonial-cards" style="
       display:flex; 
@@ -599,68 +865,71 @@ background-color:#ffffff;">
       flex-wrap:wrap;
   ">
 
-    <!-- Testimonial 1 -->
+    <!-- Testimonial 1 – Radhakrishna Homeopathy -->
     <div class="testimonial-card" style="
         background:#ffffff;
         padding:30px;
         border-radius:14px;
         width:320px;
         box-shadow:0 8px 25px rgba(0,0,0,0.08);
-        opacity:0;
-        transform:translateY(25px);
+        opacity:1;
+        transform:translateY(0px);
         transition:0.5s;
     ">
       <div style="font-size:40px; margin-bottom:15px;">⭐️⭐️⭐️⭐️⭐️</div>
       <p style="font-size:15px; color:#555; line-height:1.6;">
-        “StrategyFirst.in helped us increase leads by 3x. Their team is knowledgeable, fast,
-        and delivers exactly what is promised.”
+        “Strategy First has helped our homeopathy clinic grow faster than we expected.
+        Their digital marketing boosted our online visibility and brought in a steady
+        flow of quality leads. We now get more appointment inquiries every week.
+        Highly professional and truly results-driven.”
       </p>
-      <h4 style="margin-top:18px; font-weight:600;">– John Mathew</h4>
-      <p style="font-size:13px; color:#888;">CEO, Pexavel.com</p>
+      <h4 style="margin-top:18px; font-weight:600;">– Radhakrishna Homeopathy</h4>
     </div>
 
-    <!-- Testimonial 2 -->
+    <!-- Testimonial 2 – Bombay Grills -->
     <div class="testimonial-card" style="
         background:#ffffff;
         padding:30px;
         border-radius:14px;
         width:320px;
         box-shadow:0 8px 25px rgba(0,0,0,0.08);
-        opacity:0;
-        transform:translateY(25px);
+        opacity:1;
+        transform:translateY(0px);
         transition:0.5s;
     ">
       <div style="font-size:40px; margin-bottom:15px;">⭐️⭐️⭐️⭐️⭐️</div>
       <p style="font-size:15px; color:#555; line-height:1.6;">
-        “Our website conversions improved tremendously.
-        The best part is their detailed reporting and transparency.”
+        “Strategy First completely transformed our online presence.
+        Their marketing brought us consistent footfall, more online orders,
+        and strong engagement on social media. We saw real results within weeks.
+        Highly recommended for any restaurant looking to grow.”
       </p>
-      <h4 style="margin-top:18px; font-weight:600;">– Priya Sharma</h4>
-      <p style="font-size:13px; color:#888;">Marketing Head, Hunt Campus</p>
+      <h4 style="margin-top:18px; font-weight:600;">– Bombay Grills</h4>
     </div>
 
-    <!-- Testimonial 3 -->
+    <!-- Testimonial 3 – EMPTY (for future use) -->
     <div class="testimonial-card" style="
         background:#ffffff;
         padding:30px;
         border-radius:14px;
         width:320px;
         box-shadow:0 8px 25px rgba(0,0,0,0.08);
-        opacity:0;
-        transform:translateY(25px);
+        opacity:1;
+        transform:translateY(0px);
         transition:0.5s;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:#aaa;
+        font-size:15px;
+        font-style:italic;
     ">
-      <div style="font-size:40px; margin-bottom:15px;">⭐️⭐️⭐️⭐️⭐️</div>
-      <p style="font-size:15px; color:#555; line-height:1.6;">
-        “From SEO to content strategy, they handled everything smoothly.
-        We saw consistent growth month after month.”
-      </p>
-      <h4 style="margin-top:18px; font-weight:600;">– Rohit Verma</h4>
-      <p style="font-size:13px; color:#888;">Founder, Evolve Digital</p>
+      Add Next Testimonial Here
     </div>
 
   </div>
 </section>
+
 
 <!-- Animation Fix -->
 <style>
@@ -673,10 +942,26 @@ background-color:#ffffff;">
 <!-- ===================== AWARDS & ACHIEVEMENTS ===================== -->
 <section class="awards" style="padding:80px 6%; text-align:center; background:#f9f9f9;">
 
-  <h2 style="font-size:32px; font-weight:600; margin-bottom:40px; color:#00a6ff;">
-    Awards & Achievements
-  </h2>
+  <h2 style="
+  font-size:36px; 
+  font-weight:700; 
+  text-align:center; 
+  margin-bottom:15px; 
+  color:#00a6ff;
+  letter-spacing:0.5px;
+  font-family:'Poppins', sans-serif;
+">
+  Awards & Achievements
 
+</h2>
+
+<div style="
+  width:80px; 
+  height:4px; 
+  background:#00a6ff; 
+  margin:0 auto 40px auto; 
+  border-radius:2px;
+"></div>
   <div class="award-cards" style="
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
@@ -788,9 +1073,25 @@ background-color:#ffffff;">
  
 <!-- ===================== COMPANY TIMELINE WITH FLATICONS ===================== -->
 <section style="padding:80px 6%; background:#ffffff;">
-  <h2 style="text-align:center; font-size:32px; color:#00a6ff; margin-bottom:50px;">
-    Our Growth Journey
-  </h2>
+  <h2 style="
+  text-align:center; 
+  font-size:32px; 
+  font-weight:700; 
+  color:#00a6ff; 
+  margin-bottom:20px; 
+  letter-spacing:0.5px;
+">
+  Our Growth Journey
+</h2>
+
+<!-- Blue Line Underline -->
+<div style="
+  width:80px; 
+  height:4px; 
+  background:#00a6ff; 
+  border-radius:10px; 
+  margin:0 auto 50px auto;
+"></div>
 
   <div style="
       display:flex; 
@@ -871,64 +1172,317 @@ background-color:#ffffff;">
 
 
 
-<!-- ===================== CERTIFICATIONS SECTION ===================== -->
-<section style="padding:80px 6%; text-align:center; background:#f5faff;">
-  <h2 style="font-size:32px; font-weight:600; color:#00a6ff; margin-bottom:40px;">
-    Certifications & Expertise
-  </h2>
+  
+  <!-- ===================== TOOLS WE USE ===================== -->
+  <section style="padding:80px 6%; background:#f5faff; font-family:'Outfit', sans-serif;">
+  
+    <h2 style="
+  font-size:36px; 
+  font-weight:700; 
+  text-align:center; 
+  margin-bottom:15px; 
+  color:#00a6ff;
+  letter-spacing:0.5px;
+  font-family:'Poppins', sans-serif;
+">
+  Tools We Use to Deliver Results
 
-  <div style="
-      display:grid; 
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); 
-      gap:25px; 
-      max-width:900px; 
+</h2>
+
+<div style="
+  width:80px; 
+  height:4px; 
+  background:#00a6ff; 
+  margin:0 auto 40px auto; 
+  border-radius:2px;
+"></div>
+    
+    <style>
+    /* Heading Style */
+    .tools-heading {
+      font-size: 44px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 65px;
+      color: #00a6ff;
+      letter-spacing: 1px;
+      position: relative;
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      text-shadow: 0 0 18px rgba(0, 166, 255, 0.35);
+    }
+    
+    /* Underline Animation */
+    .tools-heading::after {
+      content: "";
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #00a6ff, #0091d1);
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 4px;
+      animation: underlineGrow 1.2s ease forwards;
+      animation-delay: 0.4s;
+    }
+    
+    /* Heading Animations */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes underlineGrow {
+      0% { width: 0; }
+      100% { width: 180px; }
+    }
+    </style>
+    
+  
+    <div class="tools-grid" style="
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:30px;
+      max-width:1100px;
       margin:0 auto;
-  ">
-
-    <div style="
-      background:#fff; padding:25px; border-radius:14px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08); text-align:center;">
-      <img src="https://i.imgur.com/YjH8e3W.png" style="width:80px;margin-bottom:10px;">
-      <h4>Google Ads Certified</h4>
-      <p style="color:#666;font-size:14px;">Search, Display & Video Ads</p>
+    ">
+  
+      <!-- CARD TEMPLATE WITH ANIMATION -->
+      <!-- Google Analytics -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/2965/2965327.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Google Analytics</h3>
+        <p style="font-size:15px; color:#666;">Track traffic & user behavior.</p>
+      </div>
+  
+      <!-- Google Ads -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/2301/2301145.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Google Ads</h3>
+        <p style="font-size:15px; color:#666;">Paid campaigns for targeted leads.</p>
+      </div>
+  
+      <!-- Meta Ads -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Meta Ads Manager</h3>
+        <p style="font-size:15px; color:#666;">Facebook & Instagram advertising.</p>
+      </div>
+  
+      <!-- SEMrush -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">SEMrush</h3>
+        <p style="font-size:15px; color:#666;">SEO tools & competitor insights.</p>
+      </div>
+  
+      <!-- HubSpot -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968814.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">HubSpot CRM</h3>
+        <p style="font-size:15px; color:#666;">Automation & lead nurturing.</p>
+      </div>
+  
+      <!-- Mailchimp -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Mailchimp</h3>
+        <p style="font-size:15px; color:#666;">Email marketing & automations.</p>
+      </div>
+  
+      <!-- Canva -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Canva</h3>
+        <p style="font-size:15px; color:#666;">Creatives & social graphics.</p>
+      </div>
+  
+      <!-- Hootsuite -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968863.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Hootsuite</h3>
+        <p style="font-size:15px; color:#666;">Social media scheduling.</p>
+      </div>
+  
+      <!-- Hotjar -->
+      <div class="tool-card" style="
+        background:#fff;
+        padding:35px;
+        border-radius:24px;
+        box-shadow:0 4px 22px rgba(0,0,0,0.06);
+        text-align:center;
+        transition:0.35s ease;
+        opacity:0;
+        transform:translateY(20px);
+      ">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" style="width:70px;margin-bottom:18px;">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Hotjar</h3>
+        <p style="font-size:15px; color:#666;">Heatmaps & user behavior analysis.</p>
+      </div>
+  
     </div>
+  </section>
+  
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const cards = document.querySelectorAll('.tool-card');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0px)";
+        }
+      });
+    });
+  
+    cards.forEach(card => observer.observe(card));
+  </script>
+  
+  <style>
+  .tool-card:hover {
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 12px 32px rgba(0,0,0,0.12);
+  }
+  </style>
+  
+  
+  
+  <!-- ===================== SINGLE SECTION ===================== -->
+  <section class="single-section" style="
+    padding:80px 6%;
+    text-align:center;
+    background:#ffffff;
+">
 
-    <div style="
-      background:#fff; padding:25px; border-radius:14px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08); text-align:center;">
-      <img src="https://i.imgur.com/f9qhkI5.png" style="width:80px;margin-bottom:10px;">
-      <h4>Meta Ads Specialist</h4>
-      <p style="color:#666;font-size:14px;">Facebook & Instagram Marketing</p>
-    </div>
+    <!-- HEADING -->
+    <h2 style="
+        font-size:40px;
+        font-weight:700;
+        color:#00a6ff;
+        margin-bottom:20px;
+        letter-spacing:0.6px;
+        font-family:'Poppins', sans-serif;
+    ">
+        Elevate Your Business Today
+    </h2>
 
-    <div style="
-      background:#fff; padding:25px; border-radius:14px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08); text-align:center;">
-      <img src="https://i.imgur.com/XiM5jW8.png" style="width:75px;margin-bottom:10px;">
-      <h4>SEO Certified Expert</h4>
-      <p style="color:#666;font-size:14px;">On-page, Off-page, Technical SEO</p>
-    </div>
+    <!-- SUBTEXT -->
+    <p style="
+        font-size:18px;
+        color:#555;
+        max-width:700px;
+        margin:0 auto 30px auto;
+        line-height:1.6;
+        font-family:'Poppins', sans-serif;
+    ">
+        We combine strategy, creativity, and automation to accelerate your business growth.
+    </p>
 
-    <div style="
-      background:#fff; padding:25px; border-radius:14px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08); text-align:center;">
-      <img src="https://i.imgur.com/Z4tZ4wn.png" style="width:75px;margin-bottom:10px;">
-      <h4>Analytics & Automation</h4>
-      <p style="color:#666;font-size:14px;">AI Tools & Data-driven Marketing</p>
-    </div>
+    <!-- CTA BUTTON -->
+    <a href="contact.html" class="btn" style="
+        background:#00a6ff;
+        color:#fff;
+        padding:14px 32px;
+        border-radius:10px;
+        font-weight:600;
+        text-decoration:none;
+        font-size:17px;
+        display:inline-block;
+        margin-bottom:40px;
+        box-shadow:0 6px 18px rgba(0,166,255,0.25);
+        transition:0.3s ease;
+        font-family:'Poppins', sans-serif;
+    "
+    onmouseover="this.style.transform='translateY(-4px)'"
+    onmouseout="this.style.transform='translateY(0)'">
+        Get a Free Consultation
+    </a>
 
-  </div>
+    <!-- IMAGE -->
+    <img src="images/ image.1.jpg" alt="Business Growth" style="
+        width:100%;
+        max-width:850px;
+        margin:0 auto;
+        border-radius:16px;
+        display:block;
+        box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    ">
+
 </section>
 
-  <!-- ===================== SINGLE SECTION ===================== -->
-  <section class="single-section">
-    <h2>Elevate Your Business Today</h2>
-    <p>We combine strategy, creativity, and automation to accelerate your business growth.</p>
-
-    <a href="contact.html" class="btn">Get a Free Consultation</a>
-
-    <img src="images/ image.1.jpg" alt="Business Growth">
-  </section>
 
 
 
