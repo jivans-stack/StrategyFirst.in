@@ -316,25 +316,189 @@
 <body>
 
   <!-- ================= NAVBAR ================= -->
-  <nav>
-    <div class="logo">StrategyFirst.in</div>
-    <ul>
+  <nav class="pro-header">
+    <a href="index.html" class="logo-link">
+      <div class="logo">
+        <span class="logo-blue">Strategy</span><span class="logo-black">First.in</span>
+      </div>
+    </a>
+    
+    
+  
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  
+    <ul class="nav-links" id="navMenu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" style="color:#00a6ff;">About</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
   </nav>
+  
+  <style>
+  /* ================= HEADER ================== */
+  .logo-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+  .logo {
+    font-size: 39px;
+    font-weight: 600;
+    color: #111;
+ 
+}
+
+/* Blue STRATEGY (same shade seen in screenshot) */
+.logo-blue {
+  color: #4da9ff;         /* exact soft blue tone from your screenshot */
+  font-weight: 600;
+}
+
+/* Black FIRST.IN (bold + dark) */
+.logo-black {
+  color: #000000;
+  font-weight: 600;       /* identical heavy bold look */
+}
+
+
+
+  .pro-header {
+
+    width: 88%;             /* ← FIXED */
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    border-bottom: 1.5px solid rgba(0,166,255,0.15);
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111;
+  }
+  .accent { color: #00a6ff; }
+  
+  /* Desktop Menu */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-left: 30px;
+  }
+  
+  .nav-links a {
+    margin-left: 5px;
+    font-size: 19px;
+    font-weight: 900;
+    color: #222;
+    position: relative;
+    transition: 0.3s ease;
+  }
+  
+  /* Hover underline */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00a6ff;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s ease;
+  }
+  
+  .nav-links a:hover { color: #00a6ff; }
+  .nav-links a:hover::after { width: 100%; }
+  
+  /* Hamburger button */
+  .hamburger {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 850px) {
+    .hamburger { display: block; }
+  
+    .nav-links {
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      width: 75%;
+      height: 100vh;
+      background: #ffffff;
+      flex-direction: column;
+      padding-top: 40px;
+      gap: 25px;
+      transition: 0.35s ease;
+      box-shadow: -8px 0 20px rgba(0,0,0,0.1);
+    }
+    .about-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;      /* same size as screenshot */
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Blue “Strategy” */
+.logo-blue {
+  color: #4da9ff;        /* same smooth blue from your logo screenshot */
+  font-weight: 800;
+}
+
+/* Black “First.in” */
+.logo-black {
+  color: #000000;        /* deep black */
+  font-weight: 900;      /* bold like your homepage */
+}
+
+  
+    .nav-links li { margin: 0; }
+  
+    .nav-links a { font-size: 20px; }
+  
+    .nav-links.active { right: 0; }
+  }
+  </style>
+  
+  <script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+  </script>
+  
+  
 
   <!-- ================= ABOUT HEADER ================= -->
   <header class="about-header">
-    <h1>About StrategyFirst.in</h1>
-    <p>We engineer performance-driven digital growth for brands who want measurable results and long-term impact. Our approach blends creativity, technology, and strategy to deliver tangible ROI while building a sustainable online presence.</p>
+    <h1 class="about-title">
+      About <span class="logo-blue">Strategy</span><span class="logo-black">First.in</span>
+    </h1>
+  
+    <p>
+      We engineer performance-driven digital growth for brands who want measurable results 
+      and long-term impact. Our approach blends creativity, technology, and strategy to deliver 
+      tangible ROI while building a sustainable online presence.
+    </p>
   </header>
+  
 
   <!-- ================= OUR SERVICES ================= -->
   <section class="section">
-    <h2>Our Services</h2>
+    <h2>Our Capabilities </h2>
     <div class="divider"></div>
   
     <!-- Visibility -->
@@ -636,15 +800,15 @@
     <div class="divider"></div>
     <div class="counters">
       <div>
-        <h3 class="counter" data-target="120">0</h3>
+        <h3 class="counter" data-target="42">0</h3>
         <p>Clients Served</p>
       </div>
       <div>
-        <h3 class="counter" data-target="250">0</h3>
+        <h3 class="counter" data-target="150">0</h3>
         <p>Campaigns Launched</p>
       </div>
       <div>
-        <h3 class="counter" data-target="95">0</h3>
+        <h3 class="counter" data-target="97">0</h3>
         <p>% Client Retention</p>
       </div>
     </div>
@@ -690,9 +854,9 @@
     </div>
 
     <div class="client-item" style="text-align:center;">
-      <img src="https://collegeassist.in/_next/image?url=https%3A%2F%2Fnurturflows.s3.ap-south-1.amazonaws.com%2Fbanner%2F15520372413993449621274199475192134100611427331473408n.jpg&w=828&q=75" 
+      <img src="https://newprojects.99acres.com/projects/shree_sai_infrastructure_development/1z4muqop.jpeg" 
            alt="CSMU" style="width:130px; height:170px; object-fit:cover; border-radius:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <p>CSMU</p>
+      <p>shri sai consructions</p>
     </div>
 
   </div>
@@ -723,7 +887,9 @@
       <!-- Contact Info -->
       <div class="footer-section" style="flex:1; min-width:220px;">
         <h4>Contact Us</h4>
-        <p>123 Digital Avenue,<br>Maharashtra, India</p>
+        <p> Om Rudra Heights,<br>
+          Plot No. 9/10, Sector 2,<br>
+          Karanjade, Maharashtra, India</p>
         <p>Email: <a href="mailto:strategyfirst.digital@gmail.com">strategyfirst.digital@gmail.com</a></p>
         <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
       </div>

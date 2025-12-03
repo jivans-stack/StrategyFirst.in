@@ -507,7 +507,6 @@ img {
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
       <a href="contact.html">Contact Us</a>
-      <a class="login-btn" href="login.html">Login</a>
     </div>
   </nav>
   
@@ -529,8 +528,8 @@ img {
   
   /* Logo */
   .logo {
-    font-size: 32px;
-    font-weight: 800;
+    font-size: 39px;
+    font-weight: 600;
     color: #111;
   }
   .accent { color: #00a6ff; }
@@ -564,22 +563,7 @@ img {
   .nav-links a:hover { color: #00a6ff; }
   .nav-links a:hover::after { width: 100%; }
   
-  /* Login Button */
-  .login-btn {
-    padding: 10px 24px;
-    background: #00a6ff;
-    color: #fff !important;
-    border-radius: 8px;
-    margin-left: 35px;
-    font-weight: 600;
-    font-size: 17px;
-    transition: 0.3s ease;
-  }
-  .login-btn:hover {
-    background: #0087d1;
-    transform: translateY(-2px);
-  }
-  
+   
   /* -------- HAMBURGER (MOBILE ONLY) -------- */
   .hamburger {
     display: none;
@@ -637,26 +621,41 @@ img {
   
   <!-- ===================== HERO ===================== -->
   <section id="hero" style="
-  padding: 40px 6%;
+  padding: 140px 6% 40px 6%;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   background: url('images/ bg.1.jpg');
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
+  margin: 0 !important;
+  position: relative;
 ">
 
-  <!-- HERO TEXT ONLY -->
+  <!-- DARK OVERLAY -->
+  <div style="
+    position:absolute;
+    top:0; left:0; 
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.38);  /* slightly lighter overlay */
+    backdrop-filter: blur(1px);   /* less blur */
+    z-index:1;
+  "></div>
+
+  <!-- HERO TEXT -->
   <div class="hero-box" style="
     max-width: 560px;
-    text-align: right;
+    text-align: left;
+    position:relative;
+    z-index:2;
+    color:white;
   ">
 
     <div class="badge" style="
-      background:#e3f3ff;
-      color:#00a6ff;
+      background:#ffffff33;
+      color:#fff;
       display:inline-block;
       padding:8px 18px;
       border-radius:20px;
@@ -668,18 +667,18 @@ img {
     <h1 style="
       font-size:54px;
       line-height:1.2;
-      margin:20px 0;
-      color:#111;
-      font-weight:700;">
+      margin:20px 0 10px 0;
+      font-weight:700;
+      color:white;">
       Unlock Predictable Growth With 
-      <span style="color:#00a6ff;">AI-Driven Marketing Systems</span>
+      <span style="color:#4ecbff;">AI-Driven Marketing Systems</span>
     </h1>
 
     <p style="
       font-size:20px;
-      color:#444;
       margin-bottom:28px;
-      line-height:1.5;">
+      line-height:1.5;
+      color:#e6e6e6;">
       We help startups and SMEs scale using data, automation, SEO, performance ads 
       and conversion-focused websites.
     </p>
@@ -697,7 +696,7 @@ img {
       </a>
 
       <a href="services.html" style="
-        color:#00a6ff;
+        color:#4ecbff;
         font-weight:600;
         font-size:17px;
         margin-left:15px;
@@ -706,34 +705,33 @@ img {
       </a>
     </div>
 
-    <!-- SMALL STATS -->
     <div class="hero-stats" style="
       margin-top:45px;
       display:flex;
       gap:35px;
-      justify-content:flex-end;
+      justify-content:flex-start;
       flex-wrap:wrap;
+      color:white;
     ">
       <div style="text-align:center;">
-        <h3 style="margin:0; font-size:28px; color:#00a6ff;">250+</h3>
-        <p style="margin:0; font-size:15px; color:#666;">Campaigns</p>
+        <h3 style="margin:0; font-size:28px; color:#4ecbff;">150+</h3>
+        <p style="margin:0; font-size:15px; color:#ddd;">Campaigns</p>
       </div>
 
       <div style="text-align:center;">
-        <h3 style="margin:0; font-size:28px; color:#00a6ff;">120+</h3>
-        <p style="margin:0; font-size:15px; color:#666;">Clients</p>
+        <h3 style="margin:0; font-size:28px; color:#4ecbff;">43+</h3>
+        <p style="margin:0; font-size:15px; color:#ddd;">Clients</p>
       </div>
 
       <div style="text-align:center;">
-        <h3 style="margin:0; font-size:28px; color:#00a6ff;">95%</h3>
-        <p style="margin:0; font-size:15px; color:#666;">Retention</p>
+        <h3 style="margin:0; font-size:28px; color:#4ecbff;">97%</h3>
+        <p style="margin:0; font-size:15px; color:#ddd;">Retention</p>
       </div>
     </div>
 
   </div>
 
 </section>
-
 
   <!-- ===================== FEATURES ===================== -->
   <section class="features">
@@ -865,53 +863,7 @@ img {
 
 
 
-  <!-- ===================== PARTNERS ===================== -->
-<section class="partners" style="padding:80px 6%; text-align:center;">
-  <h2 style="
-  font-size:36px; 
-  font-weight:700; 
-  text-align:center; 
-  margin-bottom:15px; 
-  color:#00a6ff;
-  letter-spacing:0.5px;
-  font-family:'Poppins', sans-serif;
-">
-   Trusted By Growing Brands
-</h2>
-
-<div style="
-  width:80px; 
-  height:4px; 
-  background:#00a6ff; 
-  margin:0 auto 40px auto; 
-  border-radius:2px;
-"></div>
-
-  <div class="partner-logos" 
-       style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-       gap:30px; max-width:1100px; margin:0 auto;">
-
-    <!-- Cards -->
-    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
-      Pexavel.com
-    </div>
-
-    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
-      We Reach Advertising
-    </div>
-
-    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
-      Hunt Campus
-    </div>
-
-    <div class="partner-card" style="padding:25px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);">
-      Evolve Digital
-    </div>
-
-  </div>
-</section>
-
-
+  
   <!-- ===================== STATS ===================== -->
   <section style="
   padding:80px 6%; 
@@ -1094,14 +1046,30 @@ img {
         transform:translateY(0px);
         transition:0.5s;
         display:flex;
+        flex-direction:column;
         align-items:center;
         justify-content:center;
-        color:#aaa;
-        font-size:15px;
-        font-style:italic;
+        text-align:center;
     ">
-      Add Next Testimonial Here
-    </div>
+
+      <div style="font-size:40px; margin-bottom:15px; color:#FFD700;">
+        ⭐️⭐️⭐️⭐️⭐️
+      </div>
+
+      <p style="font-size:15px; color:#555; line-height:1.6;">
+        “StrategyFirst.in transformed our online presence.  
+        We started receiving more project enquiries within just a few weeks.  
+        Their marketing strategy is clear, professional, and truly result-driven.”
+      </p>
+
+      <h4 style="margin-top:18px; font-weight:600; color:#111;">
+        – Sai Constructions
+      </h4>
+
+      <p style="font-size:13px; color:#888;">
+        Managing Director
+      </p>
+</div>
 
   </div>
 </section>
@@ -1350,70 +1318,20 @@ img {
 
   
   <!-- ===================== TOOLS WE USE ===================== -->
-  <section style="padding:80px 6%; background:#f5faff; font-family:'Outfit', sans-serif;">
+  <section style="padding:80px 6%; background:#f5faff; font-family:'Poppins', sans-serif;">
   
     <h2 style="
-  font-size:36px; 
-  font-weight:700; 
-  text-align:center; 
-  margin-bottom:15px; 
-  color:#00a6ff;
-  letter-spacing:0.5px;
-  font-family:'Poppins', sans-serif;
-">
-  Tools We Use to Deliver Results
-
-</h2>
-
-<div style="
-  width:80px; 
-  height:4px; 
-  background:#00a6ff; 
-  margin:0 auto 40px auto; 
-  border-radius:2px;
-"></div>
-    
-    <style>
-    /* Heading Style */
-    .tools-heading {
-      font-size: 44px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 65px;
-      color: #00a6ff;
-      letter-spacing: 1px;
-      position: relative;
-      animation: fadeUp 1s ease forwards;
-      opacity: 0;
-      transform: translateY(20px);
-      text-shadow: 0 0 18px rgba(0, 166, 255, 0.35);
-    }
-    
-    /* Underline Animation */
-    .tools-heading::after {
-      content: "";
-      width: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #00a6ff, #0091d1);
-      display: block;
-      margin: 12px auto 0;
-      border-radius: 4px;
-      animation: underlineGrow 1.2s ease forwards;
-      animation-delay: 0.4s;
-    }
-    
-    /* Heading Animations */
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(25px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes underlineGrow {
-      0% { width: 0; }
-      100% { width: 180px; }
-    }
-    </style>
-    
+      font-size:36px; 
+      font-weight:700; 
+      text-align:center; 
+      margin-bottom:15px; 
+      color:#00a6ff;">
+      Tools We Use to Deliver Results
+    </h2>
+  
+    <div style="
+      width:80px; height:4px; background:#00a6ff; 
+      margin:0 auto 40px; border-radius:2px;"></div>
   
     <div class="tools-grid" style="
       display:grid;
@@ -1423,158 +1341,132 @@ img {
       margin:0 auto;
     ">
   
-      <!-- CARD TEMPLATE WITH ANIMATION -->
       <!-- Google Analytics -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/2965/2965327.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Google Analytics</h3>
-        <p style="font-size:15px; color:#666;">Track traffic & user behavior.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">Google Analytics</h3>
+        <p style="font-size:15px;color:#666;">Track traffic & user behavior.</p>
       </div>
   
       <!-- Google Ads -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/2301/2301145.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Google Ads</h3>
-        <p style="font-size:15px; color:#666;">Paid campaigns for targeted leads.</p>
-      </div>
+      background:#fff; padding:35px; border-radius:24px;
+      box-shadow:0 4px 22px rgba(0,0,0,0.06);
+      text-align:center; transition:0.35s;
+      opacity:0; transform:translateY(20px);
+  ">
+  
+    <!-- ICON WITH BLACK BORDER -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828673.png" 
+         style="
+         width:65px;
+         margin-bottom:18px;
+         padding:10px;
+         border:2px solid #000;
+         border-radius:14px;
+         ">
+         
+    <h3 style="font-size:20px;font-weight:600;">Google Ads</h3>
+    <p style="font-size:15px;color:#666;">Paid campaigns for targeted leads.</p>
+  </div>
+  
   
       <!-- Meta Ads -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Meta Ads Manager</h3>
-        <p style="font-size:15px; color:#666;">Facebook & Instagram advertising.</p>
-      </div>
+      background:#fff; padding:35px; border-radius:24px;
+      box-shadow:0 4px 22px rgba(0,0,0,0.06);
+      text-align:center; transition:0.35s;
+      opacity:0; transform:translateY(20px);
+  ">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+         style="
+           width:65px;
+           margin-bottom:18px;
+           padding:10px;
+           border:2px solid #000;
+           border-radius:14px;
+           filter: grayscale(100%) brightness(0%);
+         ">
+         
+    <h3 style="font-size:20px;font-weight:600;">Meta Ads Manager</h3>
+    <p style="font-size:15px;color:#666;">Facebook & Instagram advertising.</p>
+  </div>
   
       <!-- SEMrush -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">SEMrush</h3>
-        <p style="font-size:15px; color:#666;">SEO tools & competitor insights.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828743.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">SEMrush</h3>
+        <p style="font-size:15px;color:#666;">SEO tools & competitor insights.</p>
       </div>
   
       <!-- HubSpot -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968814.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">HubSpot CRM</h3>
-        <p style="font-size:15px; color:#666;">Automation & lead nurturing.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828760.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">HubSpot CRM</h3>
+        <p style="font-size:15px;color:#666;">Automation & lead nurturing.</p>
       </div>
   
       <!-- Mailchimp -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Mailchimp</h3>
-        <p style="font-size:15px; color:#666;">Email marketing & automations.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828767.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">Mailchimp</h3>
+        <p style="font-size:15px;color:#666;">Email campaigns & automations.</p>
       </div>
   
       <!-- Canva -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Canva</h3>
-        <p style="font-size:15px; color:#666;">Creatives & social graphics.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828899.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">Canva</h3>
+        <p style="font-size:15px;color:#666;">Creatives & social graphics.</p>
       </div>
   
       <!-- Hootsuite -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968863.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Hootsuite</h3>
-        <p style="font-size:15px; color:#666;">Social media scheduling.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828748.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">Hootsuite</h3>
+        <p style="font-size:15px;color:#666;">Social media scheduling.</p>
       </div>
   
       <!-- Hotjar -->
       <div class="tool-card" style="
-        background:#fff;
-        padding:35px;
-        border-radius:24px;
+        background:#fff; padding:35px; border-radius:24px;
         box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center;
-        transition:0.35s ease;
-        opacity:0;
-        transform:translateY(20px);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" style="width:70px;margin-bottom:18px;">
-        <h3 style="font-size:20px; font-weight:600; margin-bottom:6px;">Hotjar</h3>
-        <p style="font-size:15px; color:#666;">Heatmaps & user behavior analysis.</p>
+        text-align:center; transition:0.35s;
+        opacity:0; transform:translateY(20px);">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828685.png" style="width:65px;margin-bottom:18px;">
+        <h3 style="font-size:20px;font-weight:600;">Hotjar</h3>
+        <p style="font-size:15px;color:#666;">Heatmap & behavior insights.</p>
       </div>
   
     </div>
   </section>
   
-  <!-- ANIMATION SCRIPT -->
   <script>
     const cards = document.querySelectorAll('.tool-card');
-  
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1583,16 +1475,16 @@ img {
         }
       });
     });
-  
     cards.forEach(card => observer.observe(card));
   </script>
   
   <style>
-  .tool-card:hover {
-    transform:translateY(-8px) scale(1.03);
-    box-shadow:0 12px 32px rgba(0,0,0,0.12);
-  }
+    .tool-card:hover {
+      transform:translateY(-8px) scale(1.03);
+      box-shadow:0 12px 32px rgba(0,0,0,0.12);
+    }
   </style>
+  
   
   
   
@@ -1667,68 +1559,75 @@ img {
     <div class="footer-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:40px;">
   
       <!-- Contact Info -->
-      <div class="footer-section" style="flex:1; min-width:220px;">
-        <h4>Contact Us</h4>
-        <p>123 Digital Avenue,<br>Maharashtra, India</p>
-        <p>Email: <a href="mailto:strategyfirst.digital@gmail.com">strategyfirst.digital@gmail.com</a></p>
-        <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
-      </div>
-  
-      <!-- Quick Links -->
-      <div class="footer-section" style="flex:1; min-width:180px;">
-        <h4>Quick Links</h4>
-        <ul style="list-style:none;padding:0;line-height:2;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-  
-      <!-- Social Icons -->
-      <div class="footer-section" style="flex:1; min-width:180px;">
-        <h4>Follow Us</h4>
-        <div style="display:flex; gap:18px; align-items:center;">
-  
-          <!-- Email Icon -->
-          <a href="mailto:strategyfirst.digital@gmail.com" target="_blank" style="width:26px;">
-            <svg viewBox="0 0 512 512" fill="#111">
-              <path d="M502.3 190.8L352 303.6 201.7 190.8 10.7 352c-5.9 4.9-9.7 12.3-9.7 20.2v88c0 13.3 10.7 24 24 24h464c13.3 0 24-10.7 24-24v-88c0-7.9-3.8-15.3-9.7-20.2L310.3 190.8z"/>
-              <path d="M256 288L20.8 96.5C14.5 91.5 8 88 0 88v16l256 192 256-192V88c-8 0-14.5 3.5-20.8 8.5L256 288z"/>
-            </svg>
-          </a>
-  
-          <!-- Facebook Icon -->
-          <a href="https://www.facebook.com/profile.php?id=61584602244674" target="_blank" style="width:26px;">
-            <svg viewBox="0 0 320 512" fill="#1877F2">
-              <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
-              12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
-              0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73V288z"/>
-            </svg>
-          </a>
-  
-          <!-- Instagram Icon -->
-          <a href="https://www.instagram.com/strategy_.first/" target="_blank" style="width:26px;">
-            <svg viewBox="0 0 512 512" fill="#E1306C">
-              <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 
-              69.33 162.67v186.66A93.42 93.42 0 0 0 
-              162.67 442.67h186.66A93.42 93.42 0 0 0 
-              442.67 349.33V162.67A93.42 93.42 0 0 
-              0 349.33 69.33zm64 280a64.08 64.08 0 0 
-              1-64 64H162.67a64.08 64.08 0 0 
-              1-64-64V162.67a64.08 64.08 0 0 
-              1 64-64h186.66a64.08 64.08 
-              0 0 1 64 64z"/>
-              <path d="M256 164a92 92 0 1 
-              0 92 92 92.1 92.1 0 0 0-92-92zm0 
-              152a60 60 0 1 1 60-60 60.07 60.07 
-              0 0 1-60 60z"/>
-              <circle cx="346" cy="166" r="20"/>
-            </svg>
-          </a>
-  
-        </div>
-      </div>
+      <!-- Contact Info -->
+<div class="footer-section" style="flex:1; min-width:220px;">
+  <h4>Contact Us</h4>
+
+  <p>
+    Om Rudra Heights,<br>
+    Plot No. 9/10, Sector 2,<br>
+    Karanjade, Maharashtra, India
+  </p>
+
+  <p>Email: 
+    <a href="mailto:strategyfirst.digital@gmail.com">
+      strategyfirst.digital@gmail.com
+    </a>
+  </p>
+
+  <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
+</div>
+
+<!-- Social Icons -->
+<div class="footer-section" style="flex:1; min-width:180px;">
+  <h4>Follow Us</h4>
+
+  <div style="
+      display:flex; 
+      gap:26px;       /* INCREASED GAP BETWEEN ICONS */
+      align-items:center;
+    ">
+
+    <!-- Email Icon -->
+    <a href="mailto:strategyfirst.digital@gmail.com" target="_blank" style="width:28px;">
+      <svg viewBox="0 0 512 512" fill="#111">
+        <path d="M502.3 190.8L352 303.6 201.7 190.8 10.7 352c-5.9 4.9-9.7 12.3-9.7 20.2v88c0 13.3 10.7 24 24 24h464c13.3 0 24-10.7 24-24v-88c0-7.9-3.8-15.3-9.7-20.2L310.3 190.8z"/>
+        <path d="M256 288L20.8 96.5C14.5 91.5 8 88 0 88v16l256 192 256-192V88c-8 0-14.5 3.5-20.8 8.5L256 288z"/>
+      </svg>
+    </a>
+
+    <!-- Facebook Icon -->
+    <a href="https://www.facebook.com/profile.php?id=61584602244674" target="_blank" style="width:28px;">
+      <svg viewBox="0 0 320 512" fill="#1877F2">
+        <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
+        12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
+        0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73V288z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram Icon -->
+    <a href="https://www.instagram.com/strategy_.first/" target="_blank" style="width:28px;">
+      <svg viewBox="0 0 512 512" fill="#E1306C">
+        <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 
+        69.33 162.67v186.66A93.42 93.42 0 0 0 
+        162.67 442.67h186.66A93.42 93.42 0 0 0 
+        442.67 349.33V162.67A93.42 93.42 0 0 
+        0 349.33 69.33zm64 280a64.08 64.08 0 0 
+        1-64 64H162.67a64.08 64.08 0 0 
+        1-64-64V162.67a64.08 64.08 0 0 
+        1 64-64h186.66a64.08 64.08 
+        0 0 1 64 64z"/>
+        <path d="M256 164a92 92 0 1 
+        0 92 92 92.1 92.1 0 0 0-92-92zm0 
+        152a60 60 0 1 1 60-60 60.07 60.07 
+        0 0 1-60 60z"/>
+        <circle cx="346" cy="166" r="20"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
   
       <!-- Newsletter -->
       <div class="footer-section" style="flex:1; min-width:220px;">
