@@ -639,8 +639,8 @@ img {
     position:absolute;
     top:0; left:0; 
     width:100%; height:100%;
-    background:rgba(0,0,0,0.38);  /* slightly lighter overlay */
-    backdrop-filter: blur(1px);   /* less blur */
+    background:rgba(0,0,0,0.38);
+    backdrop-filter: blur(1px);
     z-index:1;
   "></div>
 
@@ -673,6 +673,15 @@ img {
       Unlock Predictable Growth With 
       <span style="color:#4ecbff;">AI-Driven Marketing Systems</span>
     </h1>
+
+    <!-- TYPEWRITER TEXT (YELLOW) -->
+    <h2 id="typewriter-text" style="
+      font-size:26px;
+      font-weight:500;
+      margin-top:12px;
+      color:#ffd447; /* YELLOW COLOR */
+      min-height:35px;">
+    </h2>
 
     <p style="
       font-size:20px;
@@ -732,6 +741,50 @@ img {
   </div>
 
 </section>
+
+<!-- TYPEWRITER SCRIPT -->
+<script>
+const phrases = [
+  "Igniting Brand Visibility.",
+  "Driving Traffic. Delivering ROI.",
+  "Strategic Digital Solutions.",
+  "Focused on Measurable, Accelerated Growth.",
+  "Your Audience Is Waiting.",
+  "We Build The Bridge. Start Connecting.",
+  "Unlock the potential of your business with us."
+];
+
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const element = document.getElementById("typewriter-text");
+  const current = phrases[index];
+
+  if (!isDeleting) {
+    element.innerHTML = current.substring(0, charIndex + 1);
+    charIndex++;
+  } else {
+    element.innerHTML = current.substring(0, charIndex - 1);
+    charIndex--;
+  }
+
+  if (!isDeleting && charIndex === current.length) {
+    setTimeout(() => { isDeleting = true; }, 1500);
+  }
+
+  else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    index = (index + 1) % phrases.length;
+  }
+
+  const speed = isDeleting ? 50 : 80;
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
 
   <!-- ===================== FEATURES ===================== -->
   <section class="features">
@@ -865,100 +918,116 @@ img {
 
   
   <!-- ===================== STATS ===================== -->
-  <section style="
-  padding:80px 6%; 
-  background:#ffffff;
-  text-align:center;
-">
+ <!-- ===================== SLIDING RESULTS SECTION ===================== -->
+<section style="padding:80px 6%; background:#ffffff; text-align:center; font-family:'Poppins', sans-serif;">
 
-  <!-- TITLE -->
   <h2 style="
-  font-size:36px; 
-  font-weight:700; 
-  text-align:center; 
-  margin-bottom:15px; 
-  color:#00a6ff;
-  letter-spacing:0.5px;
-  font-family:'Poppins', sans-serif;
-">
-  We Deliver Results That Matter
-</h2>
+    font-size:36px; 
+    font-weight:700; 
+    text-align:center; 
+    margin-bottom:15px; 
+    color:#00a6ff;">
+    We Deliver Results That Matter
+  </h2>
 
-<div style="
-  width:80px; 
-  height:4px; 
-  background:#00a6ff; 
-  margin:0 auto 40px auto; 
-  border-radius:2px;
-"></div>
+  <div style="width:80px; height:4px; background:#00a6ff; margin:0 auto 40px; border-radius:2px;"></div>
 
-  <!-- SUBTEXT -->
   <p style="
     font-size:18px; 
     color:#444; 
     max-width:700px; 
-    margin:0 auto 40px auto;
-    line-height:1.6;
-  ">
-    Our agency focuses on generating <strong>quality leads</strong>, 
-    <strong>building strong brands</strong>, 
-    and delivering <strong>proven SEO results</strong> to help your business grow consistently.
+    margin:0 auto 50px auto;
+    line-height:1.6;">
+    Our agency focuses on generating <strong>quality leads</strong>, building <strong>strong brands</strong>, 
+    and delivering <strong>SEO results</strong> that drive long-term growth.
   </p>
 
-  <!-- RESULT FEATURES -->
-  <div style="
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    margin-bottom:50px;
-  ">
-      <div style="
-        background:#f5faff;
-        padding:20px 25px;
-        border-radius:14px;
-        width:300px;
-        box-shadow:0 6px 20px rgba(0,0,0,0.06);
-        font-size:16px;
-        color:#333;
-        line-height:1.5;
-      ">
-        ⭐ <strong>Qualified & High-Intent Leads</strong><br>
-        Lead campaigns designed for conversion.
+  <!-- SLIDER WRAPPER -->
+  <div class="slider-wrapper" style="overflow:hidden; width:100%; position:relative;">
+
+    <!-- SLIDER TRACK -->
+    <div class="slider-track" style="
+      display:flex;
+      gap:25px;
+      width:max-content;
+      animation: slideTrain 22s linear infinite;
+    ">
+
+      <!-- CARD 1 -->
+      <div class="slide-card">
+        ⭐ <strong>High-Intent Leads</strong><br>
+        Our campaigns attract customers ready to convert.
       </div>
 
-      <div style="
-        background:#f5faff;
-        padding:20px 25px;
-        border-radius:14px;
-        width:300px;
-        box-shadow:0 6px 20px rgba(0,0,0,0.06);
-        font-size:16px;
-        color:#333;
-        line-height:1.5;
-      ">
-        ⭐ <strong>Brand Growth & Management</strong><br>
-        Build a consistent and powerful online presence.
+      <!-- CARD 2 -->
+      <div class="slide-card">
+        ⭐ <strong>Brand Growth</strong><br>
+        We build strong, consistent brands that stand out.
       </div>
 
-      <div style="
-        background:#f5faff;
-        padding:20px 25px;
-        border-radius:14px;
-        width:300px;
-        box-shadow:0 6px 20px rgba(0,0,0,0.06);
-        font-size:16px;
-        color:#333;
-        line-height:1.5;
-      ">
-        ⭐ <strong>SEO Performance</strong><br>
-        Improve rankings, traffic & visibility.
+      <!-- CARD 3 -->
+      <div class="slide-card">
+        ⭐ <strong>SEO Rankings</strong><br>
+        Improve Google visibility with proven strategies.
       </div>
+
+      <!-- CARD 4 -->
+      <div class="slide-card">
+        ⭐ <strong>Google Ads ROI</strong><br>
+        Smarter bidding, lower CPC, higher conversions.
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="slide-card">
+        ⭐ <strong>Social Media Awareness</strong><br>
+        Build trust & engagement across platforms.
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="slide-card">
+        ⭐ <strong>Automation</strong><br>
+        Reduce workload & scale operations easily.
+      </div>
+
+    </div>
   </div>
 
-   
 </section>
 
+<!-- ===================== SLIDER CSS ===================== -->
+<style>
+  .slide-card {
+    background:#f5faff;
+    padding:22px 28px;
+    min-width:300px;
+    border-radius:14px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+    font-size:16px;
+    color:#333;
+    line-height:1.5;
+    border:1px solid #e6f0ff;
+    transition:0.3s ease;
+  }
+
+  /* Hover effect */
+  .slide-card:hover {
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.12);
+  }
+
+  /* Train sliding animation */
+  @keyframes slideTrain {
+    0% { transform:translateX(0); }
+    100% { transform:translateX(-50%); }
+  }
+
+  /* Duplicate track on wider screens for seamless loop */
+  @media(min-width:900px){
+    .slider-track {
+      animation-duration: 28s;
+    }
+  }
+</style>
 
 
    
@@ -985,7 +1054,6 @@ img {
   border-radius:2px;
 "></div>
 
-
   <div class="testimonial-cards" style="
       display:flex; 
       justify-content:center; 
@@ -993,95 +1061,92 @@ img {
       flex-wrap:wrap;
   ">
 
-    <!-- Testimonial 1 – Radhakrishna Homeopathy -->
-    <div class="testimonial-card" style="
-        background:#ffffff;
-        padding:30px;
-        border-radius:14px;
-        width:320px;
-        box-shadow:0 8px 25px rgba(0,0,0,0.08);
-        opacity:1;
-        transform:translateY(0px);
-        transition:0.5s;
-    ">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card animated-testimonial">
       <div style="font-size:40px; margin-bottom:15px;">⭐️⭐️⭐️⭐️⭐️</div>
       <p style="font-size:15px; color:#555; line-height:1.6;">
         “Strategy First has helped our homeopathy clinic grow faster than we expected.
         Their digital marketing boosted our online visibility and brought in a steady
-        flow of quality leads. We now get more appointment inquiries every week.
-        Highly professional and truly results-driven.”
+        flow of quality leads. Highly professional and truly results-driven.”
       </p>
       <h4 style="margin-top:18px; font-weight:600;">– Radhakrishna Homeopathy</h4>
     </div>
 
-    <!-- Testimonial 2 – Bombay Grills -->
-    <div class="testimonial-card" style="
-        background:#ffffff;
-        padding:30px;
-        border-radius:14px;
-        width:320px;
-        box-shadow:0 8px 25px rgba(0,0,0,0.08);
-        opacity:1;
-        transform:translateY(0px);
-        transition:0.5s;
-    ">
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card animated-testimonial">
       <div style="font-size:40px; margin-bottom:15px;">⭐️⭐️⭐️⭐️⭐️</div>
       <p style="font-size:15px; color:#555; line-height:1.6;">
         “Strategy First completely transformed our online presence.
-        Their marketing brought us consistent footfall, more online orders,
-        and strong engagement on social media. We saw real results within weeks.
-        Highly recommended for any restaurant looking to grow.”
+        We saw real results within weeks. Strong engagement & measurable growth.
+        Highly recommended for restaurants!”
       </p>
       <h4 style="margin-top:18px; font-weight:600;">– Bombay Grills</h4>
     </div>
 
-    <!-- Testimonial 3 – EMPTY (for future use) -->
-    <div class="testimonial-card" style="
-        background:#ffffff;
-        padding:30px;
-        border-radius:14px;
-        width:320px;
-        box-shadow:0 8px 25px rgba(0,0,0,0.08);
-        opacity:1;
-        transform:translateY(0px);
-        transition:0.5s;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-    ">
-
-      <div style="font-size:40px; margin-bottom:15px; color:#FFD700;">
-        ⭐️⭐️⭐️⭐️⭐️
-      </div>
-
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card animated-testimonial">
+      <div style="font-size:40px; margin-bottom:15px; color:#FFD700;">⭐️⭐️⭐️⭐️⭐️</div>
       <p style="font-size:15px; color:#555; line-height:1.6;">
         “StrategyFirst.in transformed our online presence.  
-        We started receiving more project enquiries within just a few weeks.  
-        Their marketing strategy is clear, professional, and truly result-driven.”
+        We started receiving more project enquiries within weeks.  
+        Their marketing strategy is professional & result-driven.”
       </p>
 
       <h4 style="margin-top:18px; font-weight:600; color:#111;">
         – Sai Constructions
       </h4>
-
       <p style="font-size:13px; color:#888;">
         Managing Director
       </p>
-</div>
+    </div>
 
   </div>
 </section>
 
-
-<!-- Animation Fix -->
+<!-- ===================== ANIMATIONS ===================== -->
 <style>
-  .testimonial-card.animate {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+  .testimonial-card {
+    background:#ffffff;
+    padding:30px;
+    border-radius:14px;
+    width:320px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    opacity:0;
+    transform: translateY(40px) scale(0.95);
+    transition: 0.7s ease;
+  }
+
+  /* When animation triggers */
+  .testimonial-card.show {
+    opacity:1 !important;
+    transform: translateY(0px) scale(1);
+  }
+
+  /* Hover animation */
+  .testimonial-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:0 12px 34px rgba(0,0,0,0.12);
   }
 </style>
+
+<script>
+  // Fade + Slide-up + Scale animation using Intersection Observer
+  const tCards = document.querySelectorAll('.animated-testimonial');
+
+  const tObserver = new IntersectionObserver(entries => {
+    let delay = 0;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, delay);
+        delay += 200; // stagger effect
+      }
+    });
+  }, { threshold: 0.2 });
+
+  tCards.forEach(card => tObserver.observe(card));
+</script>
 
 <!-- ===================== AWARDS & ACHIEVEMENTS ===================== -->
 <section class="awards" style="padding:80px 6%; text-align:center; background:#f9f9f9;">
@@ -1319,172 +1384,176 @@ img {
   
   <!-- ===================== TOOLS WE USE ===================== -->
   <section style="padding:80px 6%; background:#f5faff; font-family:'Poppins', sans-serif;">
-  
-    <h2 style="
-      font-size:36px; 
-      font-weight:700; 
-      text-align:center; 
-      margin-bottom:15px; 
-      color:#00a6ff;">
+    <h2 style="font-size:36px; font-weight:700; text-align:center; margin-bottom:15px; color:#00a6ff;">
       Tools We Use to Deliver Results
     </h2>
   
-    <div style="
-      width:80px; height:4px; background:#00a6ff; 
-      margin:0 auto 40px; border-radius:2px;"></div>
+    <div style="width:80px; height:4px; background:#00a6ff; margin:0 auto 40px; border-radius:2px;"></div>
   
-    <div class="tools-grid" style="
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:30px;
-      max-width:1100px;
-      margin:0 auto;
-    ">
+    <div class="tools-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; max-width:1100px; margin:0 auto;">
   
-      <!-- Google Analytics -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">Google Analytics</h3>
-        <p style="font-size:15px;color:#666;">Track traffic & user behavior.</p>
+      <!-- CARD TEMPLATE -->
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png">
+        </div>
+        <h3>Google Analytics</h3>
+        <p>Track traffic & user behavior.</p>
       </div>
   
-      <!-- Google Ads -->
-      <div class="tool-card" style="
-      background:#fff; padding:35px; border-radius:24px;
-      box-shadow:0 4px 22px rgba(0,0,0,0.06);
-      text-align:center; transition:0.35s;
-      opacity:0; transform:translateY(20px);
-  ">
-  
-    <!-- ICON WITH BLACK BORDER -->
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828673.png" 
-         style="
-         width:65px;
-         margin-bottom:18px;
-         padding:10px;
-         border:2px solid #000;
-         border-radius:14px;
-         ">
-         
-    <h3 style="font-size:20px;font-weight:600;">Google Ads</h3>
-    <p style="font-size:15px;color:#666;">Paid campaigns for targeted leads.</p>
-  </div>
-  
-  
-      <!-- Meta Ads -->
-      <div class="tool-card" style="
-      background:#fff; padding:35px; border-radius:24px;
-      box-shadow:0 4px 22px rgba(0,0,0,0.06);
-      text-align:center; transition:0.35s;
-      opacity:0; transform:translateY(20px);
-  ">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-         style="
-           width:65px;
-           margin-bottom:18px;
-           padding:10px;
-           border:2px solid #000;
-           border-radius:14px;
-           filter: grayscale(100%) brightness(0%);
-         ">
-         
-    <h3 style="font-size:20px;font-weight:600;">Meta Ads Manager</h3>
-    <p style="font-size:15px;color:#666;">Facebook & Instagram advertising.</p>
-  </div>
-  
-      <!-- SEMrush -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828743.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">SEMrush</h3>
-        <p style="font-size:15px;color:#666;">SEO tools & competitor insights.</p>
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://cdn-icons-png.flaticon.com/512/3209/3209339.png">
+        </div>
+        <h3>Google Ads</h3>
+        <p>Paid campaigns for targeted leads.</p>
       </div>
   
-      <!-- HubSpot -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828760.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">HubSpot CRM</h3>
-        <p style="font-size:15px;color:#666;">Automation & lead nurturing.</p>
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+        </div>
+        <h3>Meta Ads Manager</h3>
+        <p>Facebook & Instagram advertising.</p>
       </div>
   
-      <!-- Mailchimp -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828767.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">Mailchimp</h3>
-        <p style="font-size:15px;color:#666;">Email campaigns & automations.</p>
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://www.demandsage.com/wp-content/uploads/2025/03/image-5-1.png">
+        </div>
+        <h3>SEMrush</h3>
+        <p>SEO tools & competitor insights.</p>
       </div>
   
-      <!-- Canva -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828899.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">Canva</h3>
-        <p style="font-size:15px;color:#666;">Creatives & social graphics.</p>
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://images.ctfassets.net/l0xpqk9pzq5j/bqEfmAAoKxM6A1fvGi9Mn/0a4e0664b02ed4b29a4685f2900d44e4/Untitled__25_.png?w=800&h=450&q=50&fm=png">
+        </div>
+        <h3>HubSpot CRM</h3>
+        <p>Automation & lead nurturing.</p>
       </div>
   
-      <!-- Hootsuite -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828748.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">Hootsuite</h3>
-        <p style="font-size:15px;color:#666;">Social media scheduling.</p>
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+        </div>
+        <h3>Mailchimp</h3>
+        <p>Email campaigns & automations.</p>
       </div>
   
-      <!-- Hotjar -->
-      <div class="tool-card" style="
-        background:#fff; padding:35px; border-radius:24px;
-        box-shadow:0 4px 22px rgba(0,0,0,0.06);
-        text-align:center; transition:0.35s;
-        opacity:0; transform:translateY(20px);">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828685.png" style="width:65px;margin-bottom:18px;">
-        <h3 style="font-size:20px;font-weight:600;">Hotjar</h3>
-        <p style="font-size:15px;color:#666;">Heatmap & behavior insights.</p>
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_77d7429c23569c5165fdc429d10c2644/canva.png">
+        </div>
+        <h3>Canva</h3>
+        <p>Creatives & social graphics.</p>
+      </div>
+  
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://logos-world.net/wp-content/uploads/2021/03/Hootsuite-Emblem.png">
+        </div>
+        <h3>Hootsuite</h3>
+        <p>Social media scheduling.</p>
+      </div>
+  
+      <div class="tool-card animated-card">
+        <div class="icon-circle">
+          <img src="https://cro-specialist.s3.eu-central-1.amazonaws.com/user_testing_hotjar_engage_1_c06ae5ae0a.png">
+        </div>
+        <h3>Hotjar</h3>
+        <p>Heatmap & user insights.</p>
       </div>
   
     </div>
   </section>
   
-  <script>
-    const cards = document.querySelectorAll('.tool-card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0px)";
-        }
-      });
-    });
-    cards.forEach(card => observer.observe(card));
-  </script>
-  
   <style>
+    /* CARD BASE */
+    .tool-card {
+      background:#fff;
+      padding:35px;
+      border-radius:24px;
+      text-align:center;
+      box-shadow:0 4px 22px rgba(0,0,0,0.06);
+      transition:0.4s ease;
+      opacity:0;
+      transform: translateY(40px) scale(0.9);
+    }
+  
+    /* CIRCULAR ICON WRAPPER */
+    .icon-circle {
+      width:110px;
+      height:110px;
+      background:white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 20px;
+      box-shadow:0 4px 18px rgba(0, 166, 255, 0.15);
+      transition:0.4s ease;
+    }
+  
+    .icon-circle img {
+      width:65px;
+      height:auto;
+      object-fit:contain;
+      transition:0.4s ease;
+    }
+  
+    /* TEXT */
+    .tool-card h3 {
+      font-size:20px;
+      font-weight:600;
+      margin-top:10px;
+    }
+  
+    .tool-card p {
+      font-size:15px;
+      color:#666;
+    }
+  
+    /* HOVER EFFECT */
     .tool-card:hover {
-      transform:translateY(-8px) scale(1.03);
-      box-shadow:0 12px 32px rgba(0,0,0,0.12);
+      transform: translateY(-10px) scale(1.05);
+      box-shadow:0 16px 40px rgba(0,0,0,0.12);
+    }
+  
+    .tool-card:hover .icon-circle {
+      transform: scale(1.12) rotate(4deg);
+      box-shadow:0 8px 28px rgba(0, 166, 255, 0.25);
+    }
+  
+    .tool-card:hover .icon-circle img {
+      transform: scale(1.12) rotate(8deg);
+    }
+  
+    /* ENTRY ANIMATION */
+    .animated-card.show {
+      opacity:1 !important;
+      transform: translateY(0) scale(1);
     }
   </style>
   
+  <script>
+    // INTERSECTION OBSERVER FOR ENTRY ANIMATION
+    const animatedCards = document.querySelectorAll('.animated-card');
+  
+    const observer = new IntersectionObserver(entries => {
+      let delay = 0;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('show');
+          }, delay);
+          delay += 150; // Stagger animation
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    animatedCards.forEach(card => observer.observe(card));
+  </script>
   
   
   

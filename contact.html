@@ -330,29 +330,26 @@
 
       <!-- CONTACT FORM -->
       <div class="contact-form">
-        <form action="https://submit.jotform.com/submit/253360858680061/" method="POST">
+        <form action="https://formspree.io/f/xblnkljj" method="POST">
       
-          <!-- REQUIRED BY JOTFORM -->
-          <input type="hidden" name="formID" value="253360858680061">
+          <input type="text" name="name" placeholder="Full Name" required>
       
-          <!-- MATCHED TO YOUR JOTFORM FIELDS -->
-          <input type="text" name="q3_name" placeholder="Full Name" required>
-          <input type="email" name="q4_email" placeholder="Email Address" required>
-          <input type="text" name="q5_phoneNumber" placeholder="Phone Number" required>
+          <input type="email" name="email" placeholder="Email Address" required>
       
-          <textarea name="q6_message" placeholder="Your message..." rows="4" required></textarea>
+          <input type="text" name="phone" placeholder="Phone Number" required>
       
-          <!-- OPTIONAL: Redirect to your website after submit -->
-          <input type="hidden" name="thankyou_url" value="https://strategyfirst.in/">
+          <textarea name="message" placeholder="Your message..." rows="4" required></textarea>
+      
+          <!-- OPTIONAL: Redirect after submission -->
+          <input type="hidden" name="_redirect" value="https://strategyfirst.in/">
+      
+          <!-- OPTIONAL: Spam Protection -->
+          <input type="text" name="_gotcha" style="display:none">
       
           <button type="submit">Send Message</button>
         </form>
       </div>
       
-      
-
-    </div>
-  </section>
 
 
   <!-- FOOTER -->
