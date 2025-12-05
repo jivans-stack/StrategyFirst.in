@@ -5,545 +5,423 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services – StrategyFirst.in</title>
 
-  <!-- Google Fonts – Outfit & Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
-    /* ===================== GLOBAL ===================== */
-    body {
-      margin: 0;
-      font-family: "Outfit", sans-serif;
-      background: #ffffff;
-      color: #111;
-      letter-spacing: 0.3px;
-      scroll-behavior: smooth;
-    }
+/* =========================================================
+   GLOBAL
+========================================================= */
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background: #ffffff;
+  color: #111;
+  letter-spacing: 0.3px;
+  scroll-behavior: smooth;
+}
 
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-      margin: 0 0 10px 0;
-    }
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 10px;
+}
 
-    p {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #333;
-    }
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
 
-    a {
-      text-decoration: none;
-    }
+a {
+  text-decoration: none;
+}
 
-    /* ===================== NAVBAR ===================== */
-    nav {
-      width: 90%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
+/* =========================================================
+   HEADER / NAVBAR (MATCHED HOME PAGE)
+========================================================= */
 
-    nav:hover {
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+/* Clickable Logo Wrapper */
+ 
+/* =========================================================
+   SERVICE PAGE HEADER
+========================================================= */
+.service-header {
+  padding: 140px 6% 40px;
+  text-align: center;
+}
 
-    .logo {
-      font-size: 35px;
-      font-weight: 500;
-      color: #00a6ff;
-    }
+.service-header h1 {
+  font-size: 50px;
+  font-weight: 600;
+  animation: fadeInDown 1s ease forwards;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
+.service-header p {
+  font-size: 18px;
+  margin-top: 12px;
+  animation: fadeInUp 1s ease forwards;
+}
 
-    .nav-links a {
-      color: #111;
-      font-weight: 400;
-      transition: 0.3s;
-    }
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+.service-cards {
+  padding: 20px 6% 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+}
 
-    .nav-links a:hover {
-      color: #00a6ff;
-    }
+.card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+}
 
-    /* ===================== SERVICE HEADER ===================== */
-    .service-header {
-      padding: 140px 6% 40px;
-      text-align: center;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
 
-    .service-header h1 {
-      font-size: 50px;
-      font-weight: 500;
-      animation: fadeInDown 1s ease forwards;
-    }
+.card h3 {
+  color: #00a6ff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
 
-    .service-header p {
-      font-size: 18px;
-      margin-top: 12px;
-      animation: fadeInUp 1s ease forwards;
-    }
+.card p {
+  font-size: 15px;
+  margin-bottom: 18px;
+}
 
-    /* ===================== SERVICE CARDS ===================== */
-    .service-cards {
-      padding: 20px 6% 80px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+/* =========================================================
+   SERVICE DETAILS SECTION
+========================================================= */
+.service-details {
+  padding: 40px 6% 80px;
+}
 
-    .card {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s forwards;
-    }
+.detail-block {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 14px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s forwards;
+}
 
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
-    .card:nth-child(4) { animation-delay: 0.4s; }
-    .card:nth-child(5) { animation-delay: 0.5s; }
-    .card:nth-child(6) { animation-delay: 0.6s; }
-    .card:nth-child(7) { animation-delay: 0.7s; }
-    .card:nth-child(8) { animation-delay: 0.8s; }
-    .card:nth-child(9) { animation-delay: 0.9s; }
-    .card:nth-child(10){ animation-delay: 1s; }
+.detail-block h2 {
+  color: #00a6ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
+.detail-block ul {
+  padding-left: 20px;
+  line-height: 1.7;
+}
 
-    .card h3 {
-      font-weight: 500;
-      color: #00a6ff;
-      margin-bottom: 10px;
-    }
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  background: #f5f5f5;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
 
-    .card p {
-      color: #333;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .read-btn {
-      background: #00a6ff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      color: white;
-      font-weight: 500;
-      transition: 0.3s;
-      display: inline-block;
-    }
+@keyframes fadeInDown {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .read-btn:hover {
-      transform: scale(1.05);
-      background: #0077cc;
-    }
+/* SYMBOL ICON STYLE FOR SERVICE DETAIL BLOCKS */
+/* SERVICE BLOCK WITH LEFT ICON */
+.detail-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;               /* space between icon and text */
+  padding: 20px;
+}
 
-    /* ===================== SERVICE DETAILS ===================== */
-    .service-details {
-      padding: 40px 6% 80px;
-    }
+.detail-block .detail-img {
+  width: 55px;             /* icon size */
+  height: 55px;
+  object-fit: contain;
+  margin: 0;               /* remove center margin */
+  border-radius: 12px;
+  flex-shrink: 0;          /* prevent shrinking */
+}
 
-    .detail-block {
-      background: #f5f5f5;
-      padding: 30px;
-      border-radius: 14px;
-      margin-bottom: 40px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 0.8s forwards;
-    }
+.detail-block h2 {
+  margin-top: 0;
+}
 
-    .detail-block h2 {
-      color: #00a6ff;
-      font-weight: 500;
-      margin-bottom: 10px;
-      font-size: 32px;
-    }
+.detail-block ul {
+  margin-top: 8px;
+}
 
-    .detail-block p {
-      font-size: 16px;
-      color: #333;
-      line-height: 1.7;
-    }
+ 
+ 
 
-    .detail-block:nth-child(1) { animation-delay: 0.2s; }
-    .detail-block:nth-child(2) { animation-delay: 0.4s; }
-    .detail-block:nth-child(3) { animation-delay: 0.6s; }
-    .detail-block:nth-child(4) { animation-delay: 0.8s; }
-    .detail-block:nth-child(5) { animation-delay: 1s; }
-    .detail-block:nth-child(6) { animation-delay: 1.2s; }
-    .detail-block:nth-child(7) { animation-delay: 1.4s; }
-    .detail-block:nth-child(8) { animation-delay: 1.6s; }
-    .detail-block:nth-child(9) { animation-delay: 1.8s; }
-    .detail-block:nth-child(10){ animation-delay: 2s; }
-
-    /* ===================== FOOTER ===================== */
-    footer {
-      background: #f5f5f5;
-      padding: 20px;
-      text-align: center;
-      color: #555;
-      font-size: 14px;
-    }
-
-    /* ===================== ANIMATIONS ===================== */
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInDown {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ===================== RESPONSIVE ===================== */
-    @media (max-width: 900px) {
-      .service-cards {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <nav class="pro-header">
-    <a href="index.html" class="logo-link">
-      <div class="logo">
-        <span class="accent">Strategy</span>First.in
-      </div>
-    </a>
-    
-    
-  
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  
-    <ul class="nav-links" id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-  
-  <style>
-  /* ================= HEADER ================== */
-  .logo-link {
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
+<!-- ===================== NAVBAR ===================== -->
+ 
+<nav class="main-nav">
+  <a href="index.html" class="logo">
+    <span class="blue">Strategy</span>First.in
+  </a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<style>
+/* ================= NAVBAR UNIVERSAL STYLE ================= */
+.main-nav {
+  width: 90%;
+  padding: 24px 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  border-bottom: 1px solid #e7e7e7;
 }
 
+/* LOGO */
 .logo {
-    font-size: 39px;
-    font-weight: 600;
-    color: #111;
-  }
-  .accent { color: #00a6ff; }
-tical heavy bold look */
-
-
-
-  .pro-header {
-
-    width: 88%;             /* ← FIXED */
-    padding: 18px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-    border-bottom: 1.5px solid rgba(0,166,255,0.15);
-  }
-  
-  /* Logo */
-  .logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: #111;
-  }
-  .accent { color: #00a6ff; }
-  
-  /* Desktop Menu */
-  .nav-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .nav-links li {
-    margin-left: 30px;
-  }
-  
-  .nav-links a {
-    margin-left: 5px;
-    font-size: 19px;
-    font-weight: 900;
-    color: #222;
-    position: relative;
-    transition: 0.3s ease;
-  }
-  
-  /* Hover underline */
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: #00a6ff;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s ease;
-  }
-  
-  .nav-links a:hover { color: #00a6ff; }
-  .nav-links a:hover::after { width: 100%; }
-  
-  /* Hamburger button */
-  .hamburger {
-    display: none;
-    font-size: 32px;
-    cursor: pointer;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 850px) {
-    .hamburger { display: block; }
-  
-    .nav-links {
-      position: fixed;
-      top: 80px;
-      right: -100%;
-      width: 75%;
-      height: 100vh;
-      background: #ffffff;
-      flex-direction: column;
-      padding-top: 40px;
-      gap: 25px;
-      transition: 0.35s ease;
-      box-shadow: -8px 0 20px rgba(0,0,0,0.1);
-    }
-    .about-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 48px;      /* same size as screenshot */
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 15px;
+  color: #111;
+  text-decoration: none;
+}
+.logo .blue {
+  color: #00a6ff;
 }
 
-/* Blue “Strategy” */
-.logo-blue {
-  color: #4da9ff;        /* same smooth blue from your logo screenshot */
-  font-weight: 800;
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a {
+  font-size: 19px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+}
+.nav-links a:hover {
+  color: #00a6ff;
+}
+.nav-links a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #00a6ff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* Black “First.in” */
-.logo-black {
-  color: #000000;        /* deep black */
-  font-weight: 900;      /* bold like your homepage */
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-  
-    .nav-links li { margin: 0; }
-  
-    .nav-links a { font-size: 20px; }
-  
-    .nav-links.active { right: 0; }
+/* MOBILE MENU */
+@media (max-width: 850px) {
+  .hamburger { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 25px;
+    transition: 0.35s ease;
+    box-shadow: -8px 0 20px rgba(0,0,0,0.1);
   }
-  </style>
-  
-  <script>
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("active");
+  .nav-links.active {
+    right: 0;
   }
-  </script>
-  
-  
 
-  <!-- ===================== SERVICE HEADER ===================== -->
-  <section class="service-header">
-    <h1>Our Digital Services</h1>
-    <p>Precision-built strategies to accelerate your growth trajectory.</p>
-  </section>
+  .nav-links a {
+    font-size: 22px;
+  }
+}
+</style>
 
-   
-  <!-- ===================== SERVICE CARDS ===================== -->
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+
+<!-- ================== END NAVBAR ================== -->
+
+
+<!-- ===================== SERVICE HEADER ===================== -->
+<section class="service-header">
+  <h1>Our Digital Services</h1>
+  <p>Precision-built strategies to accelerate your growth trajectory.</p>
+</section>
+
+<!-- ===================== SERVICE CARDS ===================== -->
 <section class="service-cards">
 
-  <div class="card">
-    <h3>SEO – Rank Higher</h3>
-    <p>Boost your Google ranking with on-page, off-page, and technical SEO strategies.</p>
-  </div>
-
-  <div class="card">
-    <h3>Social Media Growth</h3>
-    <p>Grow your brand’s presence on Instagram, Facebook, and YouTube with content that resonates.</p>
-  </div>
-
-  <div class="card">
-    <h3>Website Development</h3>
-    <p>Fast, modern, mobile-friendly websites tailored to your brand and purpose.</p>
-  </div>
-
-  <div class="card">
-    <h3>Performance Marketing</h3>
-    <p>ROI-focused ad campaigns on Google, Meta, and YouTube that deliver measurable results.</p>
-  </div>
-
-  <div class="card">
-    <h3>Branding & Design</h3>
-    <p>Logo, identity, creatives, and design systems that communicate trust and clarity.</p>
-  </div>
-
-  <div class="card">
-    <h3>Marketing Automation</h3>
-    <p>Automate follow-ups, lead nurturing, email flows, and customer journey mapping.</p>
-  </div>
-
-  <div class="card">
-    <h3>AI Marketing Tools</h3>
-    <p>AI-powered optimization, chatbot integration, automation models, and more.</p>
-  </div>
-
-  <div class="card">
-    <h3>Content Strategy</h3>
-    <p>Content planning, blogs, short-form scripts, newsletters, and brand storytelling.</p>
-  </div>
-
-  <div class="card">
-    <h3>Email Campaigns</h3>
-    <p>High-converting email designs, audience segmentation, and automation flows.</p>
-  </div>
-
-  <div class="card">
-    <h3>Google & Meta Ads</h3>
-    <p>Search ads, display ads, retargeting, and performance optimization.</p>
-  </div>
+  <div class="card"><h3>SEO – Rank Higher</h3><p>Boost your Google rankings with solid SEO.</p></div>
+  <div class="card"><h3>Social Media Growth</h3><p>Grow your presence on Instagram, YouTube & more.</p></div>
+  <div class="card"><h3>Website Development</h3><p>Fast, modern & mobile-friendly websites.</p></div>
+  <div class="card"><h3>Performance Marketing</h3><p>ROI-driven ad campaigns on Google & Meta.</p></div>
+  <div class="card"><h3>Branding & Design</h3><p>Logos, identity & design systems.</p></div>
+  <div class="card"><h3>Marketing Automation</h3><p>Automate follow-ups & CRM workflows.</p></div>
+  <div class="card"><h3>AI Tools</h3><p>Smart automation & AI optimization.</p></div>
+  <div class="card"><h3>Content Strategy</h3><p>Blogs, scripts, storytelling & more.</p></div>
+  <div class="card"><h3>Email Campaigns</h3><p>High-converting automated email sequences.</p></div>
+  <div class="card"><h3>Google & Meta Ads</h3><p>Search, Display, Retargeting & Funnels.</p></div>
 
 </section>
 
-<!-- SINGLE CTA BUTTON TO SCROLL DOWN -->
-<div style="text-align:center; margin-bottom:60px;">
-  <a href="#service-details-start"
-     class="scroll-btn"
-     style="background:#00a6ff; padding:14px 30px; border-radius:8px; color:white; font-weight:500; font-size:16px; display:inline-block; transition:0.3s;">
-     Read More About Our Services ↓
-  </a>
-</div>
+<!-- ===================== SERVICE DETAILS ===================== -->
+<section class="service-details">
 
-
-  <!-- ===================== SERVICE DETAILS ===================== -->
-  <section class="service-details" id="service-details-start">
-
-    <!-- SEO -->
-    <div class="detail-block" id="seo">
-      <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" style="width:50px; margin-bottom:15px;">
+  <!-- SEO -->
+  <div class="detail-block">
+    <img src="images/  SEO.jpg" alt="SEO Services" class="detail-img">
+    <div class="detail-text">
       <h2>SEO – Rank Higher</h2>
-      <p>We optimize your website’s structure, content, speed, and authority. Our SEO approach blends keyword strategy, backlinks, and technical audits to improve visibility on Google and bring organic traffic that converts.</p>
+      <p>We optimize your website, increase authority and improve ranking performance.</p>
       <ul>
-        <li>Advanced keyword & competitor research</li>
-        <li>Technical SEO audits and mobile optimization</li>
-        <li>High-quality backlink and authority building</li>
-        <li>Content optimization for higher ranking</li>
+        <li>Keyword & competitor research</li>
+        <li>Technical SEO audits</li>
+        <li>Backlink building</li>
+        <li>Full content optimization</li>
       </ul>
     </div>
-  
-    <!-- Social Media -->
-    <div class="detail-block" id="social-media">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Social Media -->
+  <div class="detail-block">
+    <img src="images/  Social media.jpg" alt="Social Media Growth" class="detail-img">
+    <div class="detail-text">
       <h2>Social Media Growth</h2>
       <p>We help your brand grow on social platforms through strategic content, modern design, and consistent posting.</p>
       <ul>
         <li>Instagram reels, posts & storytelling strategy</li>
-        <li>Cross-platform branding (FB, IG, YouTube)</li>
+        <li>Cross-platform branding</li>
         <li>Monthly content calendar + design</li>
         <li>Hashtag & trend optimization</li>
       </ul>
     </div>
-  
-    <!-- Website -->
-    <div class="detail-block" id="website">
-      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Website -->
+  <div class="detail-block">
+    <img src="images/website.jpg" alt="Website Development" class="detail-img">
+    <div class="detail-text">
       <h2>Website Development</h2>
       <p>We build clean, fast, and responsive websites that make great first impressions.</p>
       <ul>
         <li>Custom business websites</li>
         <li>Mobile-first responsive layouts</li>
         <li>SEO-ready structure and fast loading</li>
-        <li>High-converting landing page designs</li>
+        <li>High-converting landing pages</li>
       </ul>
     </div>
-  
-    <!-- Performance Marketing -->
-    <div class="detail-block" id="marketing">
-      <img src="https://cdn-icons-png.flaticon.com/512/4762/4762255.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Performance -->
+  <div class="detail-block">
+    <img src="images/ performance optimization.jpg" alt="Performance Marketing" class="detail-img">
+    <div class="detail-text">
       <h2>Performance Marketing</h2>
       <p>Our performance campaigns deliver measurable ROI through testing, optimization, and scale.</p>
       <ul>
         <li>Google Search & Display Ads</li>
-        <li>Meta Ads (Instagram + Facebook)</li>
+        <li>Meta Ads (IG + FB)</li>
         <li>Audience targeting & retargeting</li>
         <li>A/B testing & conversion tracking</li>
       </ul>
     </div>
-  
-    <!-- Branding & Design -->
-    <div class="detail-block" id="branding">
-      <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Branding -->
+  <div class="detail-block">
+    <img src="images/branding.jpeg" alt="Branding Services" class="detail-img">
+    <div class="detail-text">
       <h2>Branding & Design</h2>
       <p>Your brand identity is crafted with modern design standards.</p>
       <ul>
-        <li>Logo design & color palette</li>
-        <li>Brand identity & guidelines</li>
+        <li>Logo + color palette</li>
+        <li>Brand guidelines</li>
         <li>Social media creatives</li>
         <li>Corporate design kits</li>
       </ul>
     </div>
-  
-    <!-- Automation -->
-    <div class="detail-block" id="automation">
-      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Automation -->
+  <div class="detail-block">
+    <img src="images/ mark automation.jpg" alt="Marketing Automation" class="detail-img">
+    <div class="detail-text">
       <h2>Marketing Automation</h2>
       <p>We automate customer journeys and lead nurturing systems.</p>
       <ul>
         <li>Automated email flows</li>
         <li>CRM pipelines</li>
         <li>Chatbots & WhatsApp automation</li>
-        <li>Lead capture and nurturing</li>
+        <li>Lead capture workflows</li>
       </ul>
     </div>
-  
-    <!-- AI Tools -->
-    <div class="detail-block" id="ai-tools">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- AI Tools -->
+  <div class="detail-block">
+    <img src="images/ AI MARKETING.jpg" alt="AI Tools" class="detail-img">
+    <div class="detail-text">
       <h2>AI Marketing Tools</h2>
       <p>We integrate AI to optimize and automate your marketing performance.</p>
       <ul>
@@ -553,36 +431,42 @@ tical heavy bold look */
         <li>Content automation tools</li>
       </ul>
     </div>
-  
-    <!-- Content Strategy -->
-    <div class="detail-block" id="content">
-      <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Content Strategy -->
+  <div class="detail-block">
+    <img src="images/Content creation.jpg" alt="Content Strategy" class="detail-img">
+    <div class="detail-text">
       <h2>Content Strategy</h2>
       <p>We create complete content roadmaps for your brand’s voice & messaging.</p>
       <ul>
-        <li>Blog writing & SEO content</li>
+        <li>Blogs & SEO content</li>
         <li>Reels & short-form scripts</li>
         <li>Monthly content calendars</li>
-        <li>Storytelling guidelines</li>
+        <li>Storytelling frameworks</li>
       </ul>
     </div>
-  
-    <!-- Email -->
-    <div class="detail-block" id="email">
-      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Email -->
+  <div class="detail-block">
+    <img src="images/ mail.1.png" alt="Email Marketing" class="detail-img">
+    <div class="detail-text">
       <h2>Email Campaigns</h2>
       <p>We build targeted email sequences to convert & retain customers.</p>
       <ul>
         <li>Template design</li>
         <li>Segmentation</li>
-        <li>Follow-up sequences</li>
+        <li>Follow-ups</li>
         <li>Tracking & optimization</li>
       </ul>
     </div>
-  
-    <!-- Ads -->
-    <div class="detail-block" id="ads">
-      <img src="https://cdn-icons-png.flaticon.com/512/1177/1177566.png" style="width:50px; margin-bottom:15px;">
+  </div>
+
+  <!-- Ads -->
+  <div class="detail-block">
+    <img src="images/ads.jpg" alt="Google & Meta Ads" class="detail-img">
+    <div class="detail-text">
       <h2>Google & Meta Ads</h2>
       <p>High-performance paid ads across Google & Meta platforms.</p>
       <ul>
@@ -592,106 +476,105 @@ tical heavy bold look */
         <li>Analytics & reporting</li>
       </ul>
     </div>
-  
-  </section>
-  
-  
+  </div>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer>
-    <div class="footer-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:40px;">
+</section>
 
-      <!-- Contact Info -->
-      <div class="footer-section" style="flex:1; min-width:220px;">
-        <h4>Contact Us</h4>
-        <p> Om Rudra Heights,<br>
-          Plot No. 9/10, Sector 2,<br>
-          Karanjade, Maharashtra, India</p>
-        <p>Email: <a href="mailto:strategyfirst.digital@gmail.com">strategyfirst.digital@gmail.com</a></p>
-        <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
-      </div>
 
-      <!-- Quick Links -->
-      <div class="footer-section" style="flex:1; min-width:180px;">
-        <h4>Quick Links</h4>
-        <ul style="list-style:none;padding:0;line-height:2;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:40px;">
 
-      <!-- Social Icons -->
-      <div class="footer-section" style="flex:1; min-width:180px;">
-        <h4>Follow Us</h4>
-
-        <div style="display:flex; gap:18px; align-items:center;">
-
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/profile.php?id=61584392315991" target="_blank" style="width:24px;">
-            <svg viewBox="0 0 320 512" width="24" height="24" fill="#111">
-              <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
-                12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
-                0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73
-                V288z"/>
-            </svg>
-          </a>
-
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/strategy_.first/" target="_blank" style="width:24px;">
-            <svg viewBox="0 0 512 512" width="24" height="24" fill="#111">
-              <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 69.33 
-                162.67v186.66A93.42 93.42 0 0 0 162.67 
-                442.67h186.66A93.42 93.42 0 0 0 442.67 
-                349.33V162.67A93.42 93.42 0 0 0 349.33 
-                69.33zm64 280a64.08 64.08 0 0 1-64 
-                64H162.67a64.08 64.08 0 0 1-64-64V162.67a64.08 
-                64.08 0 0 1 64-64h186.66a64.08 64.08 0 0 1 
-                64 64z"/>
-              <path d="M256 164a92 92 0 1 0 92 92 92.1 92.1 0 0 0-92-92zm0 
-                152a60 60 0 1 1 60-60 60.07 60.07 0 0 1-60 
-                60z"/>
-              <circle cx="346" cy="166" r="20"/>
-            </svg>
-          </a>
-
-          <!-- Email -->
-          <a href="mailto:strategyfirst.digital@gmail.com" style="width:26px;">
-            <svg viewBox="0 0 512 512" width="26" height="26" fill="#111">
-              <path d="M467 61H45A45 45 0 0 0 0 106v300a45 45 0 0 0 45 
-                45h422a45 45 0 0 0 45-45V106a45 45 0 0 0-45-45zm-6.3 
-                60L268 250.4a22 22 0 0 1-24 0L51.3 
-                121zm6.3 330H45a15 15 0 0 1-15-15V141l185.7 
-                138.7a52 52 0 0 0 60.6 0L482 141v295a15 15 0 0 1-15 
-                15z"/>
-            </svg>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- Newsletter -->
-      <div class="footer-section" style="flex:1; min-width:220px;">
-        <h4>Newsletter</h4>
-        <p>Subscribe for updates and offers:</p>
-        <form style="display:flex; flex-direction:column; gap:10px;">
-          <input type="email" placeholder="Your email" required style="padding:12px;border-radius:8px;border:1px solid #ddd;">
-          <button type="submit" style="padding:12px;background:#00a6ff;color:white;border:none;border-radius:6px;cursor:pointer;">
-            Subscribe
-          </button>
-        </form>
-      </div>
-
+    <!-- Contact Info -->
+    <div class="footer-section" style="flex:1; min-width:220px;">
+      <h4>Contact Us</h4>
+      <p> Om Rudra Heights,<br>
+        Plot No. 9/10, Sector 2,<br>
+        Karanjade, Maharashtra, India</p>
+      <p>Email: <a href="mailto:strategyfirst.digital@gmail.com">strategyfirst.digital@gmail.com</a></p>
+      <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
     </div>
 
-    <div style="text-align:center;padding:20px 6%;border-top:1px solid #ddd;font-size:14px;color:#555;margin-top:40px;">
-      © 2025 StrategyFirst.in – All Rights Reserved. |
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Service</a>
+    <!-- Quick Links -->
+    <div class="footer-section" style="flex:1; min-width:180px;">
+      <h4>Quick Links</h4>
+      <ul style="list-style:none;padding:0;line-height:2;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
 
+    <!-- Social Icons -->
+    <div class="footer-section" style="flex:1; min-width:180px;">
+      <h4>Follow Us</h4>
+
+      <div style="display:flex; gap:18px; align-items:center;">
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61584392315991" target="_blank" style="width:24px;">
+          <svg viewBox="0 0 320 512" width="24" height="24" fill="#111">
+            <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
+              12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
+              0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73
+              V288z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/strategy_.first/" target="_blank" style="width:24px;">
+          <svg viewBox="0 0 512 512" width="24" height="24" fill="#111">
+            <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 69.33 
+              162.67v186.66A93.42 93.42 0 0 0 162.67 
+              442.67h186.66A93.42 93.42 0 0 0 442.67 
+              349.33V162.67A93.42 93.42 0 0 0 349.33 
+              69.33zm64 280a64.08 64.08 0 0 1-64 
+              64H162.67a64.08 64.08 0 0 1-64-64V162.67a64.08 
+              64.08 0 0 1 64-64h186.66a64.08 64.08 0 0 1 
+              64 64z"/>
+            <path d="M256 164a92 92 0 1 0 92 92 92.1 92.1 0 0 0-92-92zm0 
+              152a60 60 0 1 1 60-60 60.07 60.07 0 0 1-60 
+              60z"/>
+            <circle cx="346" cy="166" r="20"/>
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:strategyfirst.digital@gmail.com" style="width:26px;">
+          <svg viewBox="0 0 512 512" width="26" height="26" fill="#111">
+            <path d="M467 61H45A45 45 0 0 0 0 106v300a45 45 0 0 0 45 
+              45h422a45 45 0 0 0 45-45V106a45 45 0 0 0-45-45zm-6.3 
+              60L268 250.4a22 22 0 0 1-24 0L51.3 
+              121zm6.3 330H45a15 15 0 0 1-15-15V141l185.7 
+              138.7a52 52 0 0 0 60.6 0L482 141v295a15 15 0 0 1-15 
+              15z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-section" style="flex:1; min-width:220px;">
+      <h4>Newsletter</h4>
+      <p>Subscribe for updates and offers:</p>
+      <form style="display:flex; flex-direction:column; gap:10px;">
+        <input type="email" placeholder="Your email" required style="padding:12px;border-radius:8px;border:1px solid #ddd;">
+        <button type="submit" style="padding:12px;background:#00a6ff;color:white;border:none;border-radius:6px;cursor:pointer;">
+          Subscribe
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:20px 6%;border-top:1px solid #ddd;font-size:14px;color:#555;margin-top:40px;">
+    © 2025 StrategyFirst.in – All Rights Reserved. |
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Service</a>
+  </div>
+</footer>
 
 </body>
 </html>

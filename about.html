@@ -36,45 +36,7 @@
       text-decoration: none;
     }
 
-    /* ===================== NAVBAR ===================== */
-    nav {
-      width: 90%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
 
-    nav .logo {
-      font-size: 35px;
-      font-weight: 500;
-      color: #00a6ff;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: #111;
-      font-weight: 400;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #00a6ff;
-    }
 
     /* ===================== HEADER ===================== */
     .about-header {
@@ -264,12 +226,7 @@
       filter: none;
     }
 
-    /* ===================== VIDEO ===================== */
-    .video-section video {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
+     
 
     /* ===================== CTA ===================== */
     .cta-section {
@@ -313,171 +270,122 @@
 <body>
 
   <!-- ================= NAVBAR ================= -->
-  <nav class="pro-header">
-    <a href="index.html" class="logo-link">
-      <div class="logo">
-        <span class="logo-blue">Strategy</span><span class="logo-black">First.in</span>
-      </div>
-    </a>
-    
-    
   
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  
-    <ul class="nav-links" id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-  
-  <style>
-  /* ================= HEADER ================== */
-  .logo-link {
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
+<nav class="main-nav">
+  <a href="index.html" class="logo">
+    <span class="blue">Strategy</span>First.in
+  </a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</nav>
+
+<style>
+/* ================= NAVBAR UNIVERSAL STYLE ================= */
+.main-nav {
+  width: 90%;
+  padding: 24px 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  border-bottom: 1px solid #e7e7e7;
 }
 
-  .logo {
-    font-size: 39px;
-    font-weight: 600;
-    color: #111;
- 
-}
-
-/* Blue STRATEGY (same shade seen in screenshot) */
-.logo-blue {
-  color: #4da9ff;         /* exact soft blue tone from your screenshot */
-  font-weight: 600;
-}
-
-/* Black FIRST.IN (bold + dark) */
-.logo-black {
-  color: #000000;
-  font-weight: 600;       /* identical heavy bold look */
-}
-
-
-
-  .pro-header {
-
-    width: 88%;             /* ← FIXED */
-    padding: 18px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-    border-bottom: 1.5px solid rgba(0,166,255,0.15);
-  }
-  
-  /* Logo */
-  .logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: #111;
-  }
-  .accent { color: #00a6ff; }
-  
-  /* Desktop Menu */
-  .nav-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .nav-links li {
-    margin-left: 30px;
-  }
-  
-  .nav-links a {
-    margin-left: 5px;
-    font-size: 19px;
-    font-weight: 900;
-    color: #222;
-    position: relative;
-    transition: 0.3s ease;
-  }
-  
-  /* Hover underline */
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: #00a6ff;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s ease;
-  }
-  
-  .nav-links a:hover { color: #00a6ff; }
-  .nav-links a:hover::after { width: 100%; }
-  
-  /* Hamburger button */
-  .hamburger {
-    display: none;
-    font-size: 32px;
-    cursor: pointer;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 850px) {
-    .hamburger { display: block; }
-  
-    .nav-links {
-      position: fixed;
-      top: 80px;
-      right: -100%;
-      width: 75%;
-      height: 100vh;
-      background: #ffffff;
-      flex-direction: column;
-      padding-top: 40px;
-      gap: 25px;
-      transition: 0.35s ease;
-      box-shadow: -8px 0 20px rgba(0,0,0,0.1);
-    }
-    .about-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 48px;      /* same size as screenshot */
+/* LOGO */
+.logo {
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 15px;
+  color: #111;
+  text-decoration: none;
+}
+.logo .blue {
+  color: #00a6ff;
 }
 
-/* Blue “Strategy” */
-.logo-blue {
-  color: #4da9ff;        /* same smooth blue from your logo screenshot */
-  font-weight: 800;
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a {
+  font-size: 19px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+}
+.nav-links a:hover {
+  color: #00a6ff;
+}
+.nav-links a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #00a6ff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* Black “First.in” */
-.logo-black {
-  color: #000000;        /* deep black */
-  font-weight: 900;      /* bold like your homepage */
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-  
-    .nav-links li { margin: 0; }
-  
-    .nav-links a { font-size: 20px; }
-  
-    .nav-links.active { right: 0; }
+/* MOBILE MENU */
+@media (max-width: 850px) {
+  .hamburger { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 25px;
+    transition: 0.35s ease;
+    box-shadow: -8px 0 20px rgba(0,0,0,0.1);
   }
-  </style>
-  
-  <script>
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("active");
+  .nav-links.active {
+    right: 0;
   }
-  </script>
-  
-  
+
+  .nav-links a {
+    font-size: 22px;
+  }
+}
+</style>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+
+<!-- ================== END NAVBAR ================== -->
 
   <!-- ================= ABOUT HEADER ================= -->
   <header class="about-header">
@@ -836,7 +744,7 @@
   <div class="clients" style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center; text-align:center;">
     
     <div class="client-item" style="text-align:center;">
-      <img src="images/ client.1.jpg" alt="Bombay Grill" style="width: 130px;px; height: 170px; object-fit:cover; border-radius:30px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+      <img src="https://bombaygrills.in/wp-content/uploads/2025/01/bombay-grills-logo.jpg" alt="Bombay Grill" style="width: 130px;px; height: 160px; object: fit 50px; border-radius:30px; );">
       <p>Bombay Grill</p>
     </div>
 
@@ -857,15 +765,7 @@
 </section>
 
 
-  <!-- ================= VIDEO / CASE STUDY ================= -->
-  <section class="section video-section">
-    <h2>Our Story</h2>
-    <div class="divider"></div>
-    <video controls>
-      <source src="https://images.pond5.com/digital-marketing-businessman-hologram-concept-113901480_prevstill.jpeg" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
+   
 
   <!-- ================= CTA ================= -->
   <section class="cta-section">
