@@ -257,6 +257,125 @@ footer {
     font-size: 22px;
   }
 }
+/* =============================================
+   MOBILE RESPONSIVE FIXES 
+   Add this at the END of your CSS
+============================================= */
+
+@media (max-width: 768px) {
+
+/* ===== NAVBAR ===== */
+.main-nav {
+  padding: 18px 6%;
+}
+.logo {
+  font-size: 26px;
+}
+
+/* ===== HERO SECTION ===== */
+#hero {
+  padding: 120px 6% 80px;
+  min-height: auto;
+  background-position: center;
+  flex-direction: column;
+  text-align: center !important;
+}
+
+#hero .hero-box {
+  text-align: center !important;
+  max-width: 100%;
+}
+
+#hero h1 {
+  font-size: 32px !important;
+  line-height: 1.3;
+}
+
+#hero h2 {
+  font-size: 20px !important;
+}
+
+#hero p {
+  font-size: 16px !important;
+}
+
+.hero-stats {
+  justify-content: center !important;
+  gap: 20px;
+}
+
+/* ===== SERVICE GRID ===== */
+.service-grid {
+  grid-template-columns: 1fr !important;
+  gap: 20px !important;
+}
+.service-card {
+  padding: 20px !important;
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why-cards {
+  grid-template-columns: 1fr !important;
+}
+
+.why-title {
+  font-size: 28px !important;
+}
+
+.why-subtitle {
+  font-size: 15px !important;
+}
+
+/* ===== SLIDER ===== */
+.slide-card {
+  min-width: 240px !important;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonial-card {
+  width: 100% !important;
+  max-width: 350px !important;
+}
+
+/* ===== TIMELINE ===== */
+section div[style*="min-width:240px"] {
+  min-width: 100% !important;
+}
+
+/* ===== TOOLS GRID ===== */
+.tools-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.tool-card {
+  padding: 25px !important;
+}
+
+/* ===== SINGLE SECTION ===== */
+.single-section h2 {
+  font-size: 30px !important;
+}
+
+.single-section p {
+  font-size: 16px !important;
+}
+
+.single-section img {
+  width: 100%;
+}
+
+/* ===== FOOTER ===== */
+.footer-container {
+  flex-direction: column;
+  text-align: center;
+  gap: 20px !important;
+}
+
+.footer-section {
+  width: 100%;
+}
+}
+
 </style>
 
 <script>
@@ -269,7 +388,7 @@ function toggleMenu() {
   
   <!-- ===================== HERO ===================== -->
   <section id="hero" style="
-  padding: 70px 40% 80px 3%;
+  padding: 90px 30% 80px 3%;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -437,179 +556,369 @@ typeEffect();
 
   <!-- ===================== FEATURES ===================== -->
   
-<section class="features">
-  <h2 class="features-title">Our Core Services</h2>
-  <div class="features-divider"></div>
-
-  <div class="feature-cards">
-
-    <!-- Data Analysis -->
-    <div class="feature-card">
-      <div class="icon">
-        <svg viewBox="0 0 512 512" fill="#00a6ff">
-          <path d="M496 384h-16V80c0-17.67-14.33-32-32-32H64c-17.67 0-32 
-          14.33-32 32v304H16c-8.84 0-16 7.16-16 16v32c0 
-          8.84 7.16 16 16 16h480c8.84 0 16-7.16 
-          16-16v-32c0-8.84-7.16-16-16-16zM96 96h320v288H96V96zm64 
-          64h64v160h-64V160zm96 64h64v96h-64v-96zm96-32h64v128h-64V192z"/>
-        </svg>
+  <section class="service-section">
+    <h2 class="service-heading">Digital Marketing Services That Drive Real Business Growth</h2>
+    <p class="service-subtext">
+      From organic SEO to paid advertising and conversion optimization — we provide 
+      end-to-end digital marketing solutions designed to scale your brand effectively.
+    </p>
+  
+    <div class="service-grid">
+  
+      <!-- SEO -->
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>Search Engine Optimization (SEO)</h3>
+        <p>Boost organic visibility and rank higher with proven SEO strategies.</p>
+        <ul>
+          <li>Keyword Research</li>
+          <li>On-Page SEO</li>
+          <li>Link Building</li>
+        </ul>
       </div>
-      <h3>Data Analysis</h3>
-      <p>Analyze business numbers to find growth opportunities.</p>
-    </div>
-
-    <!-- Performance Optimisation -->
-    <div class="feature-card">
-      <div class="icon">
-        <svg viewBox="0 0 512 512" fill="#00a6ff">
-          <path d="M256 32C132.3 32 32 132.3 32 
-          256s100.3 224 224 224 224-100.3 
-          224-224S379.7 32 256 32zm0 
-          384a160 160 0 1 1 160-160 160.18 160.18 
-          0 0 1-160 160zm-16-272h32v144h-32zm0 
-          176h32v32h-32z"/>
-        </svg>
+  
+      <!-- PPC -->
+      <div class="service-card">
+        <div class="service-icon">💲</div>
+        <h3>PPC / SEM (Paid Advertising)</h3>
+        <p>Get instant visibility and conversions with optimized ad campaigns.</p>
+        <ul>
+          <li>Google Ads</li>
+          <li>Social Ads</li>
+          <li>Retargeting</li>
+          <li>Ad Optimization</li>
+        </ul>
       </div>
-      <h3>Performance Optimisation</h3>
-      <p>Boost website speed, conversions, and ROI.</p>
-    </div>
-
-    <!-- SEO -->
-    <div class="feature-card">
-      <div class="icon">
-        <svg viewBox="0 0 512 512" fill="#00a6ff">
-          <path d="M505 442.7L405.3 
-          343c28.4-34.9 45.7-79 45.7-127C451 
-          103.5 357.5 10 241 10S31 103.5 31 
-          216s93.5 206 210 206c48 0 92.1-17.3 
-          127-45.7l99.7 99.7c4.5 4.5 10.6 7 
-          17 7s12.5-2.5 17-7c9.4-9.4 
-          9.4-24.6 0-34zM241 370c-84.1 
-          0-152-67.9-152-152S156.9 66 
-          241 66s152 67.9 152 152-67.9 
-          152-152 152z"/>
-        </svg>
+  
+      <!-- Social Media Marketing -->
+      <div class="service-card">
+        <div class="service-icon">👍</div>
+        <h3>Social Media Marketing (SMM)</h3>
+        <p>Grow your audience and boost engagement with targeted social strategies.</p>
+        <ul>
+          <li>Instagram & Facebook Marketing</li>
+          <li>Community Building</li>
+          <li>Ad Campaign Management</li>
+        </ul>
       </div>
-      <h3>SEO & Visibility</h3>
-      <p>Rank higher and get discovered by your audience.</p>
-    </div>
-
-    <!-- Social Media -->
-    <div class="feature-card">
-      <div class="icon">
-        <svg viewBox="0 0 512 512" fill="#00a6ff">
-          <path d="M349.33 69.33H162.67A93.42 
-          93.42 0 0 0 69.33 162.67v186.66A93.42 
-          93.42 0 0 0 162.67 442.67h186.66A93.42 
-          93.42 0 0 0 442.67 349.33V162.67A93.42 
-          93.42 0 0 0 349.33 69.33zm-93.33 
-          256a92 92 0 1 1 92-92 92.1 92.1 
-          0 0 1-92 92z"/>
-        </svg>
+  
+      <!-- Content Marketing -->
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <h3>Content Creation & Marketing</h3>
+        <p>Create meaningful content that builds brand authority and drives conversions.</p>
+        <ul>
+          <li>Copywriting</li>
+          <li>Blogs & Articles</li>
+          <li>Social Media Content</li>
+        </ul>
       </div>
-      <h3>Social Media Growth</h3>
-      <p>Grow your brand on Instagram, Facebook, and LinkedIn.</p>
-    </div>
-
-    <!-- Marketing Automation -->
-    <div class="feature-card">
-      <div class="icon">
-        <svg viewBox="0 0 512 512" fill="#00a6ff">
-          <path d="M448 32H64A32 32 0 0 0 32 
-          64v384a32 32 0 0 0 32 32h384a32 
-          32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-32 
-          384H96V96h320z"/>
-        </svg>
+  
+      <!-- CRO -->
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Conversion Rate Optimization (CRO)</h3>
+        <p>Improve conversions with behavior insights and performance testing.</p>
+        <ul>
+          <li>A/B Testing</li>
+          <li>Heatmap Analysis</li>
+          <li>UX Improvement</li>
+        </ul>
       </div>
-      <h3>Marketing Automation</h3>
-      <p>Automate tasks and save time with AI systems.</p>
-    </div>
-
-    <!-- Content Strategy -->
-    <div class="feature-card">
-      <div class="icon">
-        <svg viewBox="0 0 512 512" fill="#00a6ff">
-          <path d="M256 32C132.3 32 32 132.3 32 
-          256s100.3 224 224 224 224-100.3 
-          224-224S379.7 32 256 32zm96 
-          320H160v-32h192zm0-96H160v-32h192zm0-96H160V128h192z"/>
-        </svg>
+  
+      <!-- Website Design -->
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Website Design & Development</h3>
+        <p>Modern, fast, mobile-friendly websites designed for performance.</p>
+        <ul>
+          <li>Responsive UI/UX</li>
+          <li>WordPress Development</li>
+          <li>Custom Business Websites</li>
+        </ul>
       </div>
-      <h3>Content Strategy</h3>
-      <p>Create content that attracts & converts customers.</p>
+  
+      <!-- Media Marketing -->
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Media & Marketing Strategy</h3>
+        <p>Build strong brand presence with smart multi-channel marketing strategies.</p>
+        <ul>
+          <li>Brand Positioning</li>
+          <li>Campaign Planning</li>
+          <li>Audience Targeting</li>
+        </ul>
+      </div>
+  
+      <!-- Analytics -->
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Analytics & Reporting</h3>
+        <p>Track performance and make data-driven decisions for higher ROI.</p>
+        <ul>
+          <li>Monthly Reports</li>
+          <li>Performance Dashboards</li>
+          <li>Insights & Recommendations</li>
+        </ul>
+      </div>
+  
     </div>
-
-  </div>
-</section>
-
+  </section>
+  
 <!-- ============== FEATURES SECTION CSS ============== -->
 <style>
-.features {
-  padding: 80px 6%;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-.features-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #00a6ff;
+.service-section {
+  padding: 60px 6%;
   font-family: 'Poppins', sans-serif;
 }
 
-.features-divider {
-  width: 80px;
-  height: 4px;
-  background: #00a6ff;
-  margin: 15px auto 40px auto;
-  border-radius: 2px;
-}
-
-.feature-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  background: #fff;
-  padding: 30px 20px;
-  border-radius: 14px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.feature-card .icon {
-  width: 48px;
-  margin: 0 auto 15px;
-}
-
-.feature-card h3 {
-  font-size: 18px;
+.service-heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
   margin-bottom: 10px;
-  color: #111;
 }
 
-.feature-card p {
+.service-subtext {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 17px;
   color: #555;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.service-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.service-card ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.service-card ul li {
+  margin-bottom: 6px;
   font-size: 15px;
 }
 
-/* RESPONSIVE FIX */
-@media (max-width: 900px) {
-  .feature-cards {
+/* MOBILE */
+@media (max-width: 768px) {
+  .service-grid {
     grid-template-columns: 1fr;
   }
-}
-</style>
 
-   
+  .service-heading {
+    font-size: 28px;
+  }
+}
+
+
+</style>
+  <!--======why choose us section=================-->
+  <section class="why-section">
+  <div class="why-container">
+
+    <h2 class="why-title">Why Choose Us</h2>
+    <p class="why-subtitle">
+      Your success is our mission — we combine deep expertise, strategic thinking, and modern technology 
+      to accelerate your business growth.
+    </p>
+
+    <div class="why-cards">
+
+      <div class="why-card">
+        <h3>Proven Growth Frameworks</h3>
+        <p>
+          Our strategies are built using tested and data-driven frameworks that consistently increase visibility,
+          conversions, and long-term brand authority.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Client-First Approach</h3>
+        <p>
+          We understand your goals and provide solutions tailored to your vision, ensuring seamless communication
+          and full alignment throughout every project.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Results That Matter</h3>
+        <p>
+          Our focus is on measurable outcomes — more conversions, higher ROI, and sustained business growth.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Data-Driven Results</h3>
+        <p>
+          Every decision we make is backed by real performance insights, ensuring proven efficiency and 
+          measurable improvement.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Transparent Reporting</h3>
+        <p>
+          Stay in control with clear, easy-to-understand performance reports and dashboards that show exactly 
+          what’s working.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Proven Expertise</h3>
+        <p>
+          With years of experience across industries, our team brings deep technical knowledge and real-world skills
+          to deliver excellence consistently.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Client-Centric Execution</h3>
+        <p>
+          Our workflows are built around your convenience — timely delivery, proactive updates, and a partnership-based approach.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===================== WHY CHOOSE US CSS ===================== -->
+<style>
+/* SECTION BASE */
+.why-section {
+  padding: 90px 6%;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef3ff 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* HEADINGS */
+.why-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0a0a0a;
+}
+
+.why-subtitle {
+  font-size: 18px;
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+
+/* GRID */
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+/* CARD DESIGN */
+.why-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 35px 25px;
+  text-align: left;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+}
+
+/* ICON CIRCLE */
+.why-icon-circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #e7f1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: 0.3s ease;
+}
+
+.why-card:hover .why-icon-circle {
+  background: #d7e8ff;
+}
+
+.why-icon-circle span {
+  font-size: 32px;
+}
+
+/* TEXT */
+.why-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 600;
+}
+
+.why-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .why-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .why-title {
+    font-size: 32px;
+  }
+
+  .why-subtitle {
+    font-size: 16px;
+  }
+}
+
+</style>
  <!-- ===================== SLIDING RESULTS SECTION ===================== -->
 <section style="padding:80px 6%; background:#ffffff; text-align:center; font-family:'Poppins', sans-serif;">
 
@@ -1005,11 +1314,12 @@ typeEffect();
   
       <div class="tool-card animated-card">
         <div class="icon-circle">
-          <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_77d7429c23569c5165fdc429d10c2644/canva.png">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg">
         </div>
-        <h3>Canva</h3>
-        <p>Creatives & social graphics.</p>
+        <h3>Photoshop</h3>
+        <p>Advanced image editing & design.</p>
       </div>
+      
   
       <div class="tool-card animated-card">
         <div class="icon-circle">
