@@ -741,182 +741,132 @@ typeEffect();
 </style>
   <!--======why choose us section=================-->
   <section class="why-section">
-  <div class="why-container">
-
-    <h2 class="why-title">Why Choose Us</h2>
-    <p class="why-subtitle">
-      Your success is our mission — we combine deep expertise, strategic thinking, and modern technology 
-      to accelerate your business growth.
-    </p>
-
-    <div class="why-cards">
-
-      <div class="why-card">
-        <h3>Proven Growth Frameworks</h3>
-        <p>
-          Our strategies are built using tested and data-driven frameworks that consistently increase visibility,
-          conversions, and long-term brand authority.
-        </p>
+    <div class="why-container">
+  
+      <h2 class="why-title">Why Choose Us ?</h2>
+      <p class="why-subtitle">
+        We combine strategy, creativity, and data-driven execution to deliver sustainable digital growth.
+      </p>
+  
+      <div class="why-grid">
+  
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Proven Growth Frameworks</h3>
+          <p>Strategies built using proven, data-backed methods designed to increase visibility and conversions.</p>
+        </div>
+  
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Client-First Approach</h3>
+          <p>Every solution is crafted around your business goals, communication style, and market needs.</p>
+        </div>
+  
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Results That Matter</h3>
+          <p>We focus on measurable outcomes that drive real business growth — not vanity metrics.</p>
+        </div>
+  
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Data-Driven Decisions</h3>
+          <p>Every move is guided by analytics, insights, and real marketing performance indicators.</p>
+        </div>
+  
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Transparent Reporting</h3>
+          <p>Clear, easy-to-understand dashboards showing exactly what's working.</p>
+        </div>
+  
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Proven Expertise</h3>
+          <p>Years of hands-on experience delivering results across industries.</p>
+        </div>
+  
       </div>
-
-      <div class="why-card">
-        <h3>Client-First Approach</h3>
-        <p>
-          We understand your goals and provide solutions tailored to your vision, ensuring seamless communication
-          and full alignment throughout every project.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Results That Matter</h3>
-        <p>
-          Our focus is on measurable outcomes — more conversions, higher ROI, and sustained business growth.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Data-Driven Results</h3>
-        <p>
-          Every decision we make is backed by real performance insights, ensuring proven efficiency and 
-          measurable improvement.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Transparent Reporting</h3>
-        <p>
-          Stay in control with clear, easy-to-understand performance reports and dashboards that show exactly 
-          what’s working.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Proven Expertise</h3>
-        <p>
-          With years of experience across industries, our team brings deep technical knowledge and real-world skills
-          to deliver excellence consistently.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Client-Centric Execution</h3>
-        <p>
-          Our workflows are built around your convenience — timely delivery, proactive updates, and a partnership-based approach.
-        </p>
-      </div>
-
+  
     </div>
-  </div>
-</section>
+  </section>
+  
 <!-- ===================== WHY CHOOSE US CSS ===================== -->
 <style>
-/* SECTION BASE */
+/* WHY CHOOSE US – PREMIUM LAYOUT */
 .why-section {
   padding: 90px 6%;
-  background: linear-gradient(180deg, #f9fbff 0%, #eef3ff 100%);
+  background: #f7faff;
   font-family: 'Poppins', sans-serif;
 }
 
-.why-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* HEADINGS */
 .why-title {
-  font-size: 42px;
+  text-align: center;
+  font-size: 40px;
   font-weight: 700;
-  margin-bottom: 12px;
   color: #0a0a0a;
+  margin-bottom: 10px;
 }
 
 .why-subtitle {
-  font-size: 18px;
-  color: #555;
-  max-width: 720px;
+  text-align: center;
+  max-width: 700px;
   margin: 0 auto 50px;
+  font-size: 17px;
+  color: #666;
   line-height: 1.7;
 }
 
-/* GRID */
-.why-cards {
+.why-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 35px;
 }
 
-/* CARD DESIGN */
-.why-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 35px 25px;
-  text-align: left;
+.why-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
   box-shadow: 0 8px 28px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
-}
-
-/* ICON CIRCLE */
-.why-icon-circle {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: #e7f1ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
+  text-align: center;
   transition: 0.3s ease;
 }
 
-.why-card:hover .why-icon-circle {
-  background: #d7e8ff;
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.1);
 }
 
-.why-icon-circle span {
-  font-size: 32px;
+.why-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #00a6ff;
 }
 
-/* TEXT */
-.why-card h3 {
+.why-item h3 {
   font-size: 20px;
-  margin-bottom: 12px;
-  color: #111;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.why-card p {
-  font-size: 15px;
+.why-item p {
   color: #555;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .why-cards {
-    grid-template-columns: repeat(2, 1fr);
+/* MOBILE */
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (max-width: 600px) {
-  .why-cards {
+  .why-grid {
     grid-template-columns: 1fr;
   }
-
-  .why-title {
-    font-size: 32px;
-  }
-
-  .why-subtitle {
-    font-size: 16px;
-  }
 }
+
 
 </style>
  <!-- ===================== SLIDING RESULTS SECTION ===================== -->
@@ -927,7 +877,7 @@ typeEffect();
     font-weight:700; 
     text-align:center; 
     margin-bottom:15px; 
-    color:#00a6ff;">
+    ">
     We Deliver Results That Matter
   </h2>
 
