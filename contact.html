@@ -1,374 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - StrategyFirst.in</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – StrategyFirst.in</title>
 
-  <!-- Google Fonts – Outfit -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Outfit", sans-serif;
-      background: #f9f9f9;
-      color: #222;
-      scroll-behavior: smooth;
-    }
+/* =========================================================
+   GLOBAL
+========================================================= */
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background: #ffffff;
+  color: #111;
+  letter-spacing: 0.3px;
+  scroll-behavior: smooth;
+}
 
-    h1,h2,h3,h4 { margin:0; color:#111; font-weight:300; letter-spacing:0.6px; }
-    a { text-decoration:none; color:#111; transition:0.3s; }
-    a:hover { color:#00a6ff; }
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 10px;
+}
 
-    
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
 
-    /* CONTACT SECTION */
-    .contact-section {
-      padding: 120px 6% 80px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .contact-section h2 { text-align:center; color:#00a6ff; margin-bottom:30px; }
+a { text-decoration: none; }
 
-    .contact-container {
-      display:flex; gap:50px; flex-wrap:wrap;
-      justify-content:center; align-items:flex-start;
-    }
+.section {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 120px 0 60px;
+}
 
-    .contact-info, .contact-form {
-      background:#fff;
-      padding:30px;
-      border-radius:14px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.1);
-      flex:1; min-width:300px;
-    }
+/* NAVBAR STYLE */
+.main-nav {
+  width: 90%;
+  padding: 24px 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  border-bottom: 1px solid #e7e7e7;
+}
 
-    .contact-info p { margin:10px 0; font-size:15px; }
+.logo { font-size: 36px; font-weight: 700; color: #111; }
+.logo .blue { color: #00a6ff; }
 
-    /* FLATICON SVG ICONS */
-    .social-icons {
-      display:flex;
-      gap:15px;
-      margin-top:15px;
-    }
-    .social-icons a svg {
-      width:28px; height:28px;
-      fill:#00a6ff;
-      transition:0.3s;
-    }
-    .social-icons a:hover svg {
-      fill:#007acc;
-      transform:scale(1.1);
-    }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-size: 19px; font-weight: 600; color: #222; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color:#00a6ff; }
 
-    /* FORM */
-    .contact-form input,
-    .contact-form textarea {
-      width:100%;
-      padding:12px;
-      margin-bottom:15px;
-      border-radius:8px;
-      border:1px solid #ccc;
-      font-size:14px;
-    }
+.nav-links a::after {
+  content:""; width:0; height:2px; background:#00a6ff;
+  position:absolute; bottom:-6px; left:0; transition:.3s;
+}
+.nav-links a:hover::after { width:100%; }
 
-    .contact-form button {
-      padding:14px 30px;
-      background:#00a6ff;
-      color:white;
-      border:none;
-      border-radius:10px;
-      font-size:16px;
-      cursor:pointer;
-      transition:0.3s;
-    }
+.hamburger { display:none; font-size:32px; cursor:pointer; }
 
-    .contact-form button:hover {
-      transform:scale(1.04);
-      box-shadow:0 5px 15px rgba(0,166,255,0.4);
-    }
+@media(max-width:850px){
+  .hamburger{ display:block; }
 
-    /* FOOTER */
-    footer {
-      background:#f5f5f5;
-      padding:60px 6%;
-      font-family:'Outfit',sans-serif;
-    }
+  .nav-links{
+    position:fixed; top:100px; right:-100%; width:75%; height:100vh;
+    background:#fff; flex-direction:column; padding-top:40px;
+    gap:25px; transition:.35s; box-shadow:-8px 0 20px rgba(0,0,0,0.1);
+  }
+  .nav-links.active{ right:0; }
+  .nav-links a{ font-size:22px; }
+}
 
-    .footer-social svg {
-      width:26px; height:26px; fill:#00a6ff; transition:0.3s;
-    }
-    .footer-social a:hover svg {
-      fill:#007acc;
-      transform:scale(1.12);
-    }
-
-    @media(max-width:1000px){
-      .contact-container { flex-direction:column; }
-    }
+/* FOOTER MOBILE */
+@media (max-width: 768px) {
+  footer {
+    text-align:center;
+  }
+  footer .footer-row {
+    flex-direction:column;
+    align-items:center;
+  }
+}
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="main-nav">
-    <a href="index.html" class="logo">
-      <span class="blue">Strategy</span>First.in
-    </a>
-  
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-  
-    <div class="nav-links" id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
-  </nav>
-  
-  <style>
-  /* ================= NAVBAR UNIVERSAL STYLE ================= */
-  .main-nav {
-    width: 90%;
-    padding: 24px 6%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #ffffffee;
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    border-bottom: 1px solid #e7e7e7;
-  }
-  
-  /* LOGO */
-  .logo {
-    font-size: 36px;
-    font-weight: 720;
-    color: #111;
-    text-decoration: none;
-  }
-  .logo .blue {
-    color: #00a6ff;
-  }
-  
-  /* NAV LINKS */
-  .nav-links {
-    display: flex;
-    gap: 28px;
-  }
-  .nav-links a {
-    font-size: 19px;
-    font-weight: 600;
-    color: #222;
-    text-decoration: none;
-    position: relative;
-  }
-  .nav-links a:hover {
-    color: #00a6ff;
-  }
-  .nav-links a::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #00a6ff;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s;
-  }
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-  
-  /* HAMBURGER */
-  .hamburger {
-    display: none;
-    font-size: 32px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  /* MOBILE MENU */
-  @media (max-width: 850px) {
-    .hamburger { display: block; }
-  
-    .nav-links {
-      position: fixed;
-      top: 100px;
-      right: -100%;
-      width: 75%;
-      height: 100vh;
-      background: #fff;
-      flex-direction: column;
-      padding-top: 40px;
-      gap: 25px;
-      transition: 0.35s ease;
-      box-shadow: -8px 0 20px rgba(0,0,0,0.1);
-    }
-    .nav-links.active {
-      right: 0;
-    }
-  
-    .nav-links a {
-      font-size: 22px;
-    }
-  }
-  </style>
-  
-  <script>
-  function toggleMenu() {
+<!-- ===================== NAVBAR ===================== -->
+<nav class="main-nav">
+  <a href="index.html" class="logo">
+    <span class="blue">Strategy</span>First.in
+  </a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="faq.html" class="active">FAQs</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu(){
     document.getElementById("navMenu").classList.toggle("active");
   }
-  </script>
-  
-  <!-- ================== END NAVBAR ================== -->
-  
+</script>
 
-  
+<!-- ===================== CONTACT HERO ===================== -->
+<section class="contact-hero" style="
+  padding-top:180px;
+  text-align:center;
+  background:#f4faff;
+  padding-bottom:80px;
+  border-bottom:1px solid #eee;
+">
+  <h1 style="font-size:48px; font-weight:700; color:#00a6ff;">Contact Us</h1>
+  <p style="font-size:18px; color:#444; max-width:650px; margin:auto;">
+    Have questions? Need help growing your business? We're here to assist you.
+  </p>
+</section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-section">
-    <h2>Contact Us</h2>
+<!-- ===================== CONTACT CONTENT ===================== -->
+<section class="section">
+  <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:flex-start;">
 
-    <div class="contact-container">
-      
-      <!-- CONTACT INFO -->
-      <div class="contact-info">
-        <h3>Reach Us At</h3>
+    <!-- LEFT SIDE DETAILS -->
+    <div style="flex:1; min-width:300px;">
+      <h2 style="font-size:32px; font-weight:700; margin-bottom:20px; color:#111;">
+        Get in Touch
+      </h2>
 
-        <p>Email: 
-          <a href="mailto:strategyfirst.digital@gmail.com">
-            strategyfirst.digital@gmail.com
-          </a>
-        </p>
-
-        <p>Phone: <a href="tel:+918591639208">+91 8591639208</a></p>
-        <p> Om Rudra Heights,<br>
-          Plot No. 9/10, Sector 2,<br>
-          Karanjade, Maharashtra, India</p>
-
-        <div class="social-icons">
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/profile.php?id=61584392315991" target="_blank">
-            <svg viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73V288z"/></svg>
-          </a>
-
-        
-          <!-- Instagram -->
-<a href="https://www.instagram.com/strategy_.first/" target="_blank">
-  <svg viewBox="0 0 512 512">
-    <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 69.33 162.67v186.66A93.42 93.42 0 0 0 162.67 442.67h186.66A93.42 93.42 0 0 0 442.67 349.33V162.67A93.42 93.42 0 0 0 349.33 69.33zm64 280a64.08 64.08 0 0 1-64 64H162.67a64.08 64.08 0 0 1-64-64V162.67a64.08 64.08 0 0 1 64-64h186.66a64.08 64.08 0 0 1 64 64z"/>
-    <path d="M256 164a92 92 0 1 0 92 92 92.1 92.1 0 0 0-92-92zm0 152a60 60 0 1 1 60-60 60.07 60.07 0 0 1-60 60z"/>
-    <circle cx="346" cy="166" r="20"/>
-  </svg>
-</a>
-<!-- Email -->
-<a href="mailto:strategyfirst.digital@gmail.com" target="_blank">
-  <svg viewBox="0 0 512 512">
-    <path d="M467 61H45A45 45 0 0 0 0 106v300a45 45 0 0 0 45 45h422a45 45 0 0 0 45-45V106a45 45 0 0 0-45-45zm-6.3 60L268 250.4a22 22 0 0 1-24 0L51.3 121zm6.3 330H45a15 15 0 0 1-15-15V141l185.7 138.7a52 52 0 0 0 60.6 0L482 141v295a15 15 0 0 1-15 15z"/>
-  </svg>
-</a>
-
-
-        </div>
-
+      <div style="background:#f7f7f7; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        <h3 style="color:#00a6ff; font-size:22px;">📞 Phone</h3>
+        <p><a href="tel:+918591639208" style="color:#111;">+91 8591639208</a></p>
       </div>
 
-      <!-- CONTACT FORM -->
-      <div class="contact-form">
-        <form action="https://formspree.io/f/xblnkljj" method="POST">
-      
-          <input type="text" name="name" placeholder="Full Name" required>
-      
-          <input type="email" name="email" placeholder="Email Address" required>
-      
-          <input type="text" name="phone" placeholder="Phone Number" required>
-      
-          <textarea name="message" placeholder="Your message..." rows="4" required></textarea>
-      
-          <!-- OPTIONAL: Redirect after submission -->
-          <input type="hidden" name="_redirect" value="https://strategyfirst.in/">
-      
-          <!-- OPTIONAL: Spam Protection -->
-          <input type="text" name="_gotcha" style="display:none">
-      
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-      
-
-
-  <!-- FOOTER -->
-  <footer style="background:#f5f5f5; padding:60px 0; font-family:'Outfit',sans-serif; width:100%;">
-
-    <!-- MAIN FOOTER GRID -->
-    <div style="
-        max-width:1200px;
-        margin:auto;
-        padding:0 6%;
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:space-between;
-        align-items:flex-start;
-        gap:40px;
-    ">
-  
-      <!-- CONTACT SECTION -->
-      <div style="flex:1; min-width:260px;">
-        <h4 style="font-size:20px; margin-bottom:12px;">Contact Us</h4>
-  
-        <p style="line-height:1.6;">
-          Om Rudra Heights,<br>
-          Plot No. 9/10, Sector 2,<br>
-          Karanjade, Maharashtra, India
-        </p>
-  
-        <p>Email:
+      <div style="background:#f7f7f7; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        <h3 style="color:#00a6ff; font-size:22px;">📧 Email</h3>
+        <p>
           <a href="mailto:strategyfirst.digital@gmail.com" style="color:#111;">
             strategyfirst.digital@gmail.com
           </a>
         </p>
-  
-        <p>Phone:
-          <a href="tel:+918591639208" style="color:#111;">
-            +91 8591639208
-          </a>
+      </div>
+
+      <div style="background:#f7f7f7; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        <h3 style="color:#00a6ff; font-size:22px;">📍 Office</h3>
+        <p>
+          Om Rudra Heights,<br>
+          Plot No. 9/10, Sector 2,<br>
+          Karanjade, Maharashtra, India
         </p>
       </div>
-  
-      <!-- SOCIAL MEDIA -->
-      <div style="flex:1; min-width:260px;">
-        <h4 style="font-size:20px; margin-bottom:12px;">Follow Us</h4>
-  
-        <div style="display:flex; gap:22px; align-items:center;">
-  
-          <!-- Email Icon -->
-          <a href="mailto:strategyfirst.digital@gmail.com" target="_blank">
-            <svg width="28" height="28" viewBox="0 0 512 512" fill="#111">
-              <path d="M502.3 190.8L352 303.6 201.7 190.8 10.7 352c-5.9 4.9-9.7 12.3-9.7 20.2v88c0 13.3 10.7 24 24 24h480c13.3 0 24-10.7 24-24v-88c0-7.9-3.8-15.3-9.7-20.2L310.3 190.8z"/>
-              <path d="M256 288L20.8 96.5C14.5 91.5 8 88 0 88v16l256 192 256-192V88c-8 0-14.5 3.5-20.8 8.5L256 288z"/>
-            </svg>
-          </a>
-  
-          <!-- Facebook Icon -->
-          <a href="https://www.facebook.com/profile.php?id=61584392315991" target="_blank">
-            <svg width="28" height="28" viewBox="0 0 320 512" fill="#1877F2">
-              <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <div style="flex:1; min-width:350px;">
+      <h2 style="
+          font-size:32px;
+          font-weight:700;
+          text-align:center;
+          margin-bottom:20px;
+          color:#111;
+        ">
+        Fill out the form to contact us
+      </h2>
+
+      <div style="
+          background:#ffffff;
+          padding:20px;
+          border-radius:12px;
+          box-shadow:0 6px 20px rgba(0,0,0,0.08);
+        ">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeQLIAlbvywmFxILq-pk1GqhoxYn8mMcE7fE4L8MoYfdkKh-g/viewform?embedded=true" 
+          width="100%" 
+          height="950" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          style="border-radius:8px;">
+            Loading…
+        </iframe>
+      </div>
+    </div>
+
+  </div> <!-- end flex -->
+</section> <!-- end .section -->
+
+
+<!-- ===================== FULL-WIDTH FOOTER ===================== -->
+<footer style="background:#f8f8f8; padding:70px 6% 30px; margin-top:0; width:100%;">
+  <div class="footer-row" style="
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:40px;
+    ">
+
+    <!-- Contact Info -->
+    <div class="footer-section" style="flex:1; min-width:260px;">
+      <h4 style="font-size:22px; font-weight:700; margin-bottom:15px; color:#111;">
+        Contact Us
+      </h4>
+
+      <p style="line-height:1.7; margin:0 0 10px;">
+        Om Rudra Heights,<br>
+        Plot No. 9/10, Sector 2,<br>
+        Karanjade, Maharashtra, India
+      </p>
+
+      <p style="margin:8px 0;">
+        Email:
+        <a href="mailto:strategyfirst.digital@gmail.com" style="color:#00a6ff;">
+          strategyfirst.digital@gmail.com
+        </a>
+      </p>
+
+      <p style="margin:8px 0;">
+        Phone:
+        <a href="tel:+918591639208" style="color:#00a6ff;">
+          +91 8591639208
+        </a>
+      </p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-section" style="flex:1; min-width:240px;">
+      <h4 style="font-size:22px; font-weight:700; margin-bottom:15px; color:#111;">
+        Follow Us
+      </h4>
+
+      <div style="display:flex; gap:22px; align-items:center;">
+        <a href="mailto:strategyfirst.digital@gmail.com" style="width:30px;">
+          <svg viewBox="0 0 512 512" fill="#111">
+            <path d="M502.3 190.8L352 303.6 201.7 190.8 10.7 352c-5.9 4.9-9.7 12.3-9.7 20.2v88c0 13.3 10.7 24 24 24h464c13.3 0 24-10.7 24-24v-88c0-7.9-3.8-15.3-9.7-20.2L310.3 190.8z"/>
+            <path d="M256 288L20.8 96.5C14.5 91.5 8 88 0 88v16l256 192 256-192V88c-8 0-14.5 3.5-20.8 8.5L256 288z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61584392315991" target="_blank" style="width:30px;">
+          <svg viewBox="0 0 320 512" fill="#1877F2">
+            <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
               12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
               0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73V288z"/>
-            </svg>
-          </a>
-  
-          <!-- Instagram Icon -->
-          <a href="https://www.instagram.com/strategy_.first/" target="_blank">
-            <svg width="28" height="28" viewBox="0 0 512 512" fill="#E1306C">
-              <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 
+          </svg>
+        </a>
+
+        <a href="https://www.instagram.com/strategy_.first/" target="_blank" style="width:30px;">
+          <svg viewBox="0 0 512 512" fill="#E1306C">
+            <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 
               69.33 162.67v186.66A93.42 93.42 0 0 0 
               162.67 442.67h186.66A93.42 93.42 0 0 0 
               442.67 349.33V162.67A93.42 93.42 0 0 
@@ -377,124 +280,54 @@
               1-64-64V162.67a64.08 64.08 0 0 
               1 64-64h186.66a64.08 64.08 
               0 0 1 64 64z"/>
-              <path d="M256 164a92 92 0 1 
+            <path d="M256 164a92 92 0 1 
               0 92 92 92.1 92.1 0 0 0-92-92zm0 
               152a60 60 0 1 1 60-60 60.07 60.07 
               0 0 1-60 60z"/>
-              <circle cx="346" cy="166" r="20"/>
-            </svg>
-          </a>
-  
-        </div>
+            <circle cx="346" cy="166" r="20"/>
+          </svg>
+        </a>
       </div>
-  
-      <!-- NEWSLETTER -->
-      <div style="flex:1; min-width:260px;">
-        <h4 style="font-size:20px; margin-bottom:12px;">Newsletter</h4>
-  
-        <p>Subscribe for updates and offers:</p>
-  
-        <form style="display:flex; flex-direction:column; gap:10px;">
-          <input type="email" placeholder="Your email" required
-                 style="padding:12px; border-radius:8px; border:1px solid #ddd;">
-  
-          <button type="submit"
-                  style="padding:12px; background:#00a6ff; color:white; border:none; border-radius:6px; cursor:pointer;">
-            Subscribe
-          </button>
-        </form>
-      </div>
-  
     </div>
-  
-    <!-- COPYRIGHT BAR -->
-    <div style="
-        text-align:center;
-        padding:20px 6%;
-        border-top:1px solid #ddd;
-        font-size:14px;
-        color:#555;
-        margin-top:40px;
-    ">
-      © 2025 StrategyFirst.in – All Rights Reserved. |
-      <a href="#" style="color:#111;">Privacy Policy</a> |
-      <a href="#" style="color:#111;">Terms of Service</a>
-    </div>
-  
-  </footer>
-  <!----========footer mobile view css======--->
-<style> 
 
-  @media (max-width: 768px) {
-  
-   footer {
-     text-align: center !important;
-     padding: 40px 6% !important;
-   }
-  
-   .footer-container {
-     flex-direction: column !important;
-     align-items: center !important;
-     text-align: center !important;
-     gap: 35px !important;
-   }
-  
-   .footer-section {
-     width: 100% !important;
-     max-width: 450px !important;
-     text-align: center !important;
-   }
-  
-   /* Contact Info */
-   .footer-section h4 {
-     font-size: 20px !important;
-     margin-bottom: 10px;
-   }
-  
-   .footer-section p,
-   .footer-section a {
-     font-size: 16px !important;
-     line-height: 1.6;
-   }
-  
-   /* Social Icons */
-   .footer-section div[style*="display:flex"] {
-     justify-content: center !important;
-     gap: 22px !important;
-   }
-  
-   .footer-section svg {
-     width: 30px !important;
-     height: 30px !important;
-   }
-  
-   /* Newsletter */
-   .footer-section form {
-     width: 100% !important;
-     max-width: 350px;
-     margin: 0 auto !important;
-   }
-  
-   .footer-section input {
-     width: 100% !important;
-     padding: 14px !important;
-     font-size: 16px !important;
-   }
-  
-   .footer-section button {
-     width: 100% !important;
-     padding: 14px !important;
-     font-size: 17px !important;
-   }
-  
-   /* Bottom line */
-   footer > div:last-child {
-     margin-top: 30px !important;
-     padding: 20px 0 !important;
-     font-size: 14px !important;
-     line-height: 1.5;
-   }
-  }
-  </style>
+    <!-- Newsletter -->
+    <div class="footer-section" style="flex:1; min-width:220px;">
+      <h4>WhatsApp Support</h4>
+      <p>Have questions? Chat with us instantly.</p>
+    
+      <a href="https://wa.me/918591639208" target="_blank"
+         style="
+            padding:12px;
+            background:#25D366;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            text-align:center;
+            font-weight:600;
+            display:block;
+            text-decoration:none;
+          ">
+        Message on WhatsApp
+      </a>
+    </div>
+    
+
+  </div>
+
+  <div style="
+      text-align:center;
+      margin-top:50px;
+      padding-top:20px;
+      border-top:1px solid #ddd;
+      font-size:14px;
+      color:#555;
+    ">
+    © 2025 StrategyFirst.in – All Rights Reserved.
+    <a href="#" style="color:#00a6ff;">Privacy Policy</a> |
+    <a href="#" style="color:#00a6ff;">Terms of Service</a>
+  </div>
+</footer>
+
 </body>
 </html>

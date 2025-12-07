@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs – StrategyFirst.in</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background: #ffffff;
+  color: #111;
+  letter-spacing: 0.3px;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0 10px;
+}
+
+/* Navbar */
+.main-nav {
+  width: 90%;
+  padding: 24px 6%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffffee;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;   /* <<< Add this */
+}
+.logo .blue {
+  color: #00a6ff;
+}
+
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-size: 19px; font-weight: 600; color: #222; position: relative;
+  text-decoration: none;
+}
+.nav-links a:hover, .nav-links a.active { color:#00a6ff; }
+
+.nav-links a::after {
+  content:""; width:0; height:2px; background:#00a6ff;
+  position:absolute; bottom:-6px; left:0; transition:.3s;
+}
+.nav-links a:hover::after { width:100%; }
+
+.hamburger { display:none; font-size:32px; cursor:pointer; }
+
+/* Mobile Navbar */
+@media(max-width:850px){
+  .hamburger{ display:block; }
+
+  .nav-links{
+    position:fixed; top:100px; right:-100%; width:75%; height:100vh;
+    background:#fff; flex-direction:column; padding-top:40px;
+    gap:25px; transition:.35s; box-shadow:-8px 0 20px rgba(0,0,0,0.1);
+  }
+  .nav-links.active{ right:0; }
+  .nav-links a{ font-size:22px; }
+}
+
+/* HERO */
+.hero {
+  padding-top: 180px;
+  padding-bottom: 80px;
+  text-align: center;
+  background: #f4faff;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #00a6ff;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  color: #444;
+  margin: auto;
+}
+
+/* FAQ SECTION FIX */
+.faq-section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 80px auto;
+}
+
+.faq-item {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.faq-item:hover {
+  background: #eef7ff;
+}
+
+.faq-question {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  background: #f8f8f8;
+  padding: 70px 6% 30px;
+  margin-top: 80px;
+}
+
+.footer-row {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+  footer .footer-row {
+    text-align:center;
+    flex-direction:column;
+    align-items:center;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="main-nav">
+  <a href="index.html" class="logo">
+    <span class="blue">Strategy</span>First.in
+  </a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="faq.html" class="active">FAQs</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Frequently Asked Questions</h1>
+  <p>Find quick answers to the most common queries about our digital marketing services.</p>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+
+  <div class="faq-item">
+    <div class="faq-question">1. What is Digital Marketing?</div>
+    <div class="faq-answer">
+      Digital marketing includes online strategies like SEO, PPC, SMM, content marketing & analytics.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">2. What is SEO and why is it important?</div>
+    <div class="faq-answer">
+      SEO improves Google ranking, increases visibility, and brings organic customers without ads.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">3. What is PPC advertising?</div>
+    <div class="faq-answer">
+      PPC means you pay only when someone clicks your ad — powerful for fast lead generation.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">4. What is CRM and how does it help?</div>
+    <div class="faq-answer">
+      CRM helps track leads, manage customers, boost conversions & ensure no lead is missed.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">5. Do I need both SEO and PPC?</div>
+    <div class="faq-answer">
+      Yes — SEO builds long-term trust; PPC brings quick results. Both combined = best results.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">6. How long does it take to see results?</div>
+    <div class="faq-answer">
+      SEO: 3–6 months<br>
+      Social Media: 1–2 months<br>
+      PPC Ads: Immediate
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">7. Will you manage my social media accounts?</div>
+    <div class="faq-answer">
+      Yes — we handle content creation, posting, engagement & reporting.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">8. Do you design and develop websites?</div>
+    <div class="faq-answer">
+      Yes — responsive, SEO-friendly & high-conversion websites for all industries.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">9. How do you measure performance?</div>
+    <div class="faq-answer">
+      Via Analytics, CRM dashboards, Meta Insights & monthly reports.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">10. Can you run ads for my business?</div>
+    <div class="faq-answer">
+      Yes — Google Ads, Facebook, Instagram & YouTube campaigns.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">11. Do you offer customized packages?</div>
+    <div class="faq-answer">
+      Yes — tailored strategies based on goals, competition & budget.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">12. What industries do you specialize in?</div>
+    <div class="faq-answer">
+      Healthcare, real estate, education, retail, personal brands & more.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">13. Do I need a long-term contract?</div>
+    <div class="faq-answer">
+      No — flexible monthly & project-based plans available.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">14. How do I get started?</div>
+    <div class="faq-answer">
+      Contact us via WhatsApp, call, or contact form.
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<!-- ===================== FOOTER ===================== -->
+<footer style="background:#f8f8f8; margin-top:80px; padding-top:60px;">
+
+    <div class="footer-container" style="
+        display:flex; 
+        flex-wrap:wrap; 
+        justify-content:space-between; 
+        max-width:1200px; 
+        margin:0 auto; 
+        gap:40px;
+      ">
+  
+      <!-- Contact Info -->
+      <div class="footer-section" style="flex:1; min-width:220px;">
+        <h4 style="font-size:22px; font-weight:700;">Contact Us</h4>
+        <p>
+          Om Rudra Heights,<br>
+          Plot No. 9/10, Sector 2,<br>
+          Karanjade, Maharashtra, India
+        </p>
+  
+        <p>Email: 
+          <a href="mailto:strategyfirst.digital@gmail.com" style="color:#00a6ff;">
+            strategyfirst.digital@gmail.com
+          </a>
+        </p>
+  
+        <p>Phone: 
+          <a href="tel:+918591639208" style="color:#00a6ff;">
+            +91 8591639208
+          </a>
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div class="footer-section" style="flex:1; min-width:180px;">
+        <h4 style="font-size:22px; font-weight:700;">Quick Links</h4>
+        <ul style="list-style:none;padding:0;line-height:2;">
+          <li><a href="index.html" style="color:#111;">Home</a></li>
+          <li><a href="about.html" style="color:#111;">About Us</a></li>
+          <li><a href="services.html" style="color:#111;">Services</a></li>
+          <li><a href="contact.html" style="color:#111;">Contact</a></li>
+          <li><a href="faq.html" style="color:#111;">FAQs</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Icons -->
+      <div class="footer-section" style="flex:1; min-width:180px;">
+        <h4 style="font-size:22px; font-weight:700;">Follow Us</h4>
+  
+        <div style="display:flex; gap:18px; align-items:center;">
+  
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=61584392315991" target="_blank">
+            <svg viewBox="0 0 320 512" width="26" height="26" fill="#111">
+              <path d="M279.14 288l14.22-92.66h-88.91V127.41c0-25.35 
+                12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 
+                0C141.09 0 89.09 54.42 89.09 153.23V195.3H0v92.66h89.09V512h107.73
+                V288z"/>
+            </svg>
+          </a>
+  
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/strategy_.first/" target="_blank">
+            <svg viewBox="0 0 512 512" width="26" height="26" fill="#111">
+              <path d="M349.33 69.33H162.67A93.42 93.42 0 0 0 69.33 
+                162.67v186.66A93.42 93.42 0 0 0 162.67 
+                442.67h186.66A93.42 93.42 0 0 0 442.67 
+                349.33V162.67A93.42 93.42 0 0 0 349.33 
+                69.33zm64 280a64.08 64.08 0 0 1-64 
+                64H162.67a64.08 64.08 0 0 1-64-64V162.67a64.08 
+                64.08 0 0 1 64-64h186.66a64.08 64.08 0 0 1 
+                64 64z"/>
+              <path d="M256 164a92 92 0 1 0 92 92 92.1 92.1 
+                0 0 0-92-92zm0 152a60 60 0 1 1 60-60 
+                60.07 60.07 0 0 1-60 60z"/>
+              <circle cx="346" cy="166" r="20"/>
+            </svg>
+          </a>
+  
+          <!-- Email -->
+          <a href="mailto:strategyfirst.digital@gmail.com">
+            <svg viewBox="0 0 512 512" width="28" height="28" fill="#111">
+              <path d="M467 61H45A45 45 0 0 0 0 106v300a45 45 0 0 0 45 
+                45h422a45 45 0 0 0 45-45V106a45 45 0 0 0-45-45zm-6.3 
+                60L268 250.4a22 22 0 0 1-24 0L51.3 
+                121zm6.3 330H45a15 15 0 0 1-15-15V141l185.7 
+                138.7a52 52 0 0 0 60.6 0L482 141v295a15 15 0 0 1-15 
+                15z"/>
+            </svg>
+          </a>
+  
+        </div>
+      </div>
+  
+      <!-- Newsletter -->
+      <div class="footer-section" style="flex:1; min-width:220px;">
+        <h4>WhatsApp Support</h4>
+        <p>Have questions? Chat with us instantly.</p>
+      
+        <a href="https://wa.me/918591639208" target="_blank"
+           style="
+              padding:12px;
+              background:#25D366;
+              color:white;
+              border:none;
+              border-radius:8px;
+              cursor:pointer;
+              text-align:center;
+              font-weight:600;
+              display:block;
+              text-decoration:none;
+            ">
+          Message on WhatsApp
+        </a>
+      </div>
+      
+  
+    </div>
+  
+    <div style="text-align:center;padding:20px 6%;border-top:1px solid #ddd;font-size:14px;color:#555;margin-top:40px;">
+      © 2025 StrategyFirst.in – All Rights Reserved. |
+      <a href="#" style="color:#00a6ff;">Privacy Policy</a> |
+      <a href="#" style="color:#00a6ff;">Terms of Service</a>
+    </div>
+  
+  </footer>
+  
+  <!-- ===================== MOBILE FOOTER CSS ===================== -->
+  <style>
+  @media (max-width: 768px) {
+  
+    footer {
+      text-align: center !important;
+      padding: 40px 6% !important;
+    }
+  
+    .footer-container {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 35px !important;
+    }
+  
+    .footer-section {
+      width: 100% !important;
+      max-width: 450px !important;
+    }
+  
+    .footer-section div[style*="display:flex"] {
+      justify-content: center !important;
+      gap: 22px !important;
+    }
+  
+    .footer-section svg {
+      width: 32px !important;
+      height: 32px !important;
+    }
+  
+    footer > div:last-child {
+      margin-top: 30px !important;
+      padding: 20px 0 !important;
+    }
+  }
+  </style>
+  
+<script>
+// FAQ Toggle
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
