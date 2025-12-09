@@ -271,10 +271,10 @@
 
   <!-- ================= NAVBAR ================= -->
   
-<nav class="main-nav">
-  <a href="index.html" class="logo">
-    <span class="blue">Strategy</span>First.in
-  </a>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/ logo.png" alt="Logo">
+    </a>
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
@@ -306,27 +306,34 @@
 }
 
 /* LOGO */
-.logo {
-  font-size: 36px;
-  font-weight: 700;
-  color: #111;
-  text-decoration: none;
-}
-.logo .blue {
-  color: #00a6ff;
+.navbar {
+  height: 100px;        /* Change this value to control navbar height */
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  gap: 28px;
+/* Logo size controlled separately */
+.navbar .logo img {
+  height: 250px;        /* Control logo size */
+  width: 280px;
+  padding-left: 20px;
+  padding-right: 40px;
 }
-.nav-links a {
-  font-size: 19px;
-  font-weight: 600;
-  color: #222;
+
+/* Nav links align middle */
+.navbar .nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar .nav-links a {
+  font-size: 16px;
+  color: #333;
   text-decoration: none;
-  position: relative;
 }
 .nav-links a:hover {
   color: #00a6ff;
@@ -341,10 +348,7 @@
   bottom: -6px;
   transition: 0.3s;
 }
-.nav-links a:hover::after {
-  width: 100%;
-}
-
+ 
 /* HAMBURGER */
 .hamburger {
   display: none;

@@ -43,28 +43,40 @@ h1, h2, h3 {
   border-bottom: 1px solid #e7e7e7;
 }
 
-.logo {
-  font-size: 36px;
-  font-weight: 700;
-  color: #111;
-  text-decoration: none;   /* <<< Add this */
+.navbar {
+  height: 100px;        /* Change this value to control navbar height */
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
-.logo .blue {
-  color: #00a6ff;
+
+/* Logo size controlled separately */
+.navbar .logo img {
+  height: 250px;        /* Control logo size */
+  width: 280px;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+/* Nav links align middle */
+.navbar .nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar .nav-links a {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
 }
 
 .nav-links { display: flex; gap: 28px; }
-.nav-links a {
-  font-size: 19px; font-weight: 600; color: #222; position: relative;
-  text-decoration: none;
-}
-.nav-links a:hover, .nav-links a.active { color:#00a6ff; }
-
-.nav-links a::after {
-  content:""; width:0; height:2px; background:#00a6ff;
-  position:absolute; bottom:-6px; left:0; transition:.3s;
-}
-.nav-links a:hover::after { width:100%; }
+ 
+ 
+ 
 
 .hamburger { display:none; font-size:32px; cursor:pointer; }
 
@@ -181,9 +193,9 @@ footer {
 <body>
 
 <!-- ===================== NAVBAR ===================== -->
-<nav class="main-nav">
+<nav class="navbar">
   <a href="index.html" class="logo">
-    <span class="blue">Strategy</span>First.in
+    <img src="images/ logo.png" alt="Logo">
   </a>
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>

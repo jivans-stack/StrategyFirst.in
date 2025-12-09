@@ -151,10 +151,11 @@ footer {
 
 <!-- ===================== NAVBAR ===================== -->
  
-<nav class="main-nav">
+<nav class="navbar">
   <a href="index.html" class="logo">
-    <span class="blue">Strategy</span>First.in
+    <img src="images/ logo.png" alt="Logo">
   </a>
+
 
   <div class="hamburger" onclick="toggleMenu()">☰</div>
 
@@ -186,28 +187,37 @@ footer {
 }
 
 /* LOGO */
-.logo {
-  font-size: 36px;
-  font-weight: 700;
-  color: #111;
-  text-decoration: none;
-}
-.logo .blue {
-  color: #00a6ff;
+/* CONTROL NAVBAR HEIGHT HERE */
+.navbar {
+  height: 100px;        /* Change this value to control navbar height */
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* NAV LINKS */
-.nav-links {
+/* Logo size controlled separately */
+.navbar .logo img {
+  height: 250px;        /* Control logo size */
+  width: 280px;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+/* Nav links align middle */
+.navbar .nav-links {
+  margin-left: auto;
   display: flex;
-  gap: 28px;
+  gap: 40px;
 }
-.nav-links a {
-  font-size: 19px;
-  font-weight: 600;
-  color: #222;
+
+.navbar .nav-links a {
+  font-size: 16px;
+  color: #333;
   text-decoration: none;
-  position: relative;
 }
+
 .nav-links a:hover {
   color: #00a6ff;
 }
@@ -221,9 +231,7 @@ footer {
   bottom: -6px;
   transition: 0.3s;
 }
-.nav-links a:hover::after {
-  width: 100%;
-}
+ 
 
 /* HAMBURGER */
 .hamburger {
@@ -389,7 +397,7 @@ function toggleMenu() {
   
   <!-- ===================== HERO ===================== -->
   <section id="hero" style="
-  padding: 90px 30% 80px 3%;
+  padding: 1px 30% 80px 3%;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -909,7 +917,7 @@ typeEffect();
 .whatsapp-banner img {
   width: 30px;
   height: 30px;
-  filter: invert(1);
+   
 }
 
 .whatsapp-banner:hover {
@@ -1543,83 +1551,103 @@ typeEffect();
 </section>
 
   <!-- ===================== Blog SECTION  css===================== -->
-<style>.blog-section {
-  padding: 80px 6%;
-  background: #fafafa;
-  text-align: center;
-}
-
-.blog-heading {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.blog-subtext {
-  color: #666;
-  margin-bottom: 40px;
-  font-size: 18px;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 35px;
-}
-
-.blog-card {
-  background: #ffffff;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-}
-
-.blog-card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-}
-
-.blog-content {
-  padding: 20px 22px;
-  text-align: left;
-}
-
-.blog-content h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.blog-content p {
-  color: #555;
-  margin-bottom: 18px;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.blog-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #1e722e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  letter-spacing: 1px;
-}
-
-.blog-btn:hover {
-  background: #155823;
-}
-</style>
+<style>/* BLOG SECTION */
+  .blog-section {
+    padding: 80px 8%;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .blog-heading {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .blog-subtext {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  /* BLOG GRID */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  /* BLOG CARD */
+  .blog-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  }
+  
+  /* BLOG IMAGE */
+  .blog-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  /* BLOG CONTENT */
+  .blog-content {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .blog-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .blog-content p {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  
+  .blog-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #0077ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s ease;
+  }
+  
+  .blog-btn:hover {
+    background: #005fcc;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 992px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .blog-section {
+      padding: 50px 5%;
+    }
+  }
+  </style>
   <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="footer-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:40px;">
